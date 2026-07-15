@@ -5,24 +5,26 @@
 
 import React, { useState } from "react";
 import { STATES_DB, getCityDetails, createDynamicCity } from "../data/states";
-import { StateData, CityData, ServiceType } from "../types";
-import { MapPin, Search, ChevronRight, Wind, Calendar, Star, Shield, Award, Sparkles, Thermometer, ArrowLeft, MessageSquare, Wrench, Phone } from "lucide-react";
+import { PHONE_TEL_HREF, PHONE_DISPLAY } from "../data/phone";
+import { StateData, CityData } from "../types";
+import { MapPin, Search, ChevronRight, Wind, Star, Shield, Award, Sparkles, Thermometer, ArrowLeft, MessageSquare, Wrench, Phone } from "lucide-react";
 import LocalAdvisor from "./LocalAdvisor";
 import ServicePageTemplate from "./ServicePageTemplate";
+import Breadcrumbs from "./Breadcrumbs";
 
 function ServiceFaqItem({ q, a }: { q: string; a: string }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="border-b border-slate-850 pb-4 last:border-0 last:pb-0">
+    <div className="border-b border-slate-200 pb-4 last:border-0 last:pb-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left flex justify-between items-center py-2 text-sm font-bold text-white hover:text-sky-400 transition-colors cursor-pointer"
+        className="w-full text-left flex justify-between items-center py-2 text-sm font-bold text-slate-900 hover:text-sky-600 transition-colors cursor-pointer"
       >
         <span>{q}</span>
-        <ChevronRight className={`h-4 w-4 transform transition-transform ${isOpen ? "rotate-90 text-sky-400" : "text-slate-500"}`} />
+        <ChevronRight className={`h-4 w-4 transform transition-transform ${isOpen ? "rotate-90 text-sky-600" : "text-slate-500"}`} />
       </button>
       {isOpen && (
-        <p className="text-xs text-slate-400 leading-relaxed mt-2 pl-1 animate-in fade-in duration-200">
+        <p className="text-xs text-slate-600 leading-relaxed mt-2 pl-1 animate-in fade-in duration-200">
           {a}
         </p>
       )}
@@ -31,7 +33,6 @@ function ServiceFaqItem({ q, a }: { q: string; a: string }) {
 }
 
 interface StateDirectoryProps {
-  onBookService: (stateAbbr: string, cityName: string, servicePreset: ServiceType) => void;
   selectedStateAbbr: string;
   setSelectedStateAbbr: (abbr: string) => void;
   selectedCityName: string | null;
@@ -41,7 +42,6 @@ interface StateDirectoryProps {
 }
 
 export default function StateDirectory({ 
-  onBookService, 
   selectedStateAbbr, 
   setSelectedStateAbbr,
   selectedCityName,
@@ -112,15 +112,15 @@ export default function StateDirectory({
       {!selectedStateAbbr && (
         <div className="space-y-8" id="national-directory-grid">
           <div className="text-center space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-sky-950/40 border border-sky-800/40 px-4 py-1.5 rounded-full text-xs text-sky-400 font-bold font-mono">
+            <div className="inline-flex items-center space-x-2 bg-sky-50 border border-sky-200 px-4 py-1.5 rounded-full text-xs text-sky-600 font-bold font-mono">
               <MapPin className="h-3.5 w-3.5" />
               <span>Nationwide Cooling Coverage Map</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-              AeroNation HVAC Service Directory
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              getacrepair HVAC Service Directory
             </h1>
-            <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-              We cover all 50 states and over 20,000 cities in the US. Select your state or search for your municipality to see dedicated climate advice and customized local pricing.
+            <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              We cover all 50 states with major cities nationwide. Select your state or search for your municipality to see dedicated climate advice and customized local pricing.
             </p>
 
             {/* Directory Search Bar */}
@@ -132,7 +132,7 @@ export default function StateDirectory({
                   placeholder="Search your state or city (e.g. Texas, Chicago)..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-3.5 pl-12 pr-4 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm shadow-xl"
+                  className="w-full bg-white border border-slate-200 rounded-2xl py-3.5 pl-12 pr-4 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm shadow-sm"
                   id="directory-search-input"
                 />
               </div>
@@ -145,18 +145,18 @@ export default function StateDirectory({
               <button
                 key={state.abbr}
                 onClick={() => handleStateClick(state.abbr)}
-                className="bg-slate-900 border border-slate-800/60 hover:border-sky-500 hover:shadow-lg hover:shadow-sky-500/5 p-4 rounded-2xl text-left transition-all duration-250 cursor-pointer group flex flex-col justify-between h-32"
+                className="bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md p-4 rounded-2xl text-left transition-all duration-250 cursor-pointer group flex flex-col justify-between h-32 shadow-sm"
                 id={`state-btn-${state.abbr}`}
               >
                 <div>
                   <div className="flex justify-between items-start">
-                    <span className="text-2xl font-black text-slate-700 font-mono group-hover:text-sky-500/20">{state.abbr}</span>
-                    <span className="text-[10px] font-bold text-slate-400 bg-slate-950 px-2 py-0.5 rounded-full font-mono">{state.avgTemp}</span>
+                    <span className="text-2xl font-black text-slate-200 font-mono group-hover:text-sky-200">{state.abbr}</span>
+                    <span className="text-[10px] font-bold text-slate-500 bg-sky-50 px-2 py-0.5 rounded-full font-mono">{state.avgTemp}</span>
                   </div>
-                  <h3 className="text-sm font-bold text-white mt-2 group-hover:text-sky-400 transition-colors">{state.name}</h3>
+                  <h3 className="text-sm font-bold text-slate-900 mt-2 group-hover:text-sky-600 transition-colors">{state.name}</h3>
                   <p className="text-[10px] text-slate-500 mt-1 leading-normal font-medium">{state.climateZone}</p>
                 </div>
-                <div className="text-[10px] text-sky-400 font-mono flex items-center space-x-1 font-bold">
+                <div className="text-[10px] text-sky-600 font-mono flex items-center space-x-1 font-bold">
                   <span>Explore Cities</span>
                   <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -165,9 +165,9 @@ export default function StateDirectory({
           </div>
 
           {filteredStates.length === 0 && (
-            <div className="text-center py-12 bg-slate-950/30 border border-slate-800 rounded-3xl max-w-lg mx-auto">
-              <p className="text-slate-400 text-sm">No coverage results matched "{searchQuery}".</p>
-              <p className="text-xs text-slate-600 mt-2">AeroNation provides dispatching anywhere in the US. Please search using standard state abbreviations or names.</p>
+            <div className="text-center py-12 bg-sky-50/40 border border-slate-200 rounded-3xl max-w-lg mx-auto">
+              <p className="text-slate-600 text-sm">No coverage results matched "{searchQuery}".</p>
+              <p className="text-xs text-slate-500 mt-2">getacrepair provides dispatching anywhere in the US. Please search using standard state abbreviations or names.</p>
             </div>
           )}
         </div>
@@ -177,48 +177,66 @@ export default function StateDirectory({
       {selectedStateAbbr && activeState && !selectedCityName && (
         <div className="space-y-8 animate-in fade-in duration-200" id={`state-page-${selectedStateAbbr}`}>
           
-          {/* Breadcrumbs / Back button */}
+          <Breadcrumbs
+            items={[
+              {
+                label: "Home",
+                onClick: () => {
+                  window.history.pushState(null, "", "/");
+                  window.dispatchEvent(new PopStateEvent("popstate"));
+                },
+              },
+              { label: "Directory", onClick: handleBackToNational },
+              { label: activeState.name },
+            ]}
+          />
+
           <button 
             onClick={handleBackToNational}
-            className="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-sky-300 font-mono hover:underline cursor-pointer"
+            className="inline-flex items-center space-x-2 text-xs font-bold text-sky-600 hover:text-sky-500 font-mono hover:underline cursor-pointer"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>BACK TO NATIONAL DIRECTORY</span>
           </button>
 
           {/* State Hero / Header */}
-          <div className="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 shadow-2xl">
+          <div className="bg-gradient-to-br from-sky-50 via-white to-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 shadow-sm">
             <div className="lg:col-span-2 space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-sky-950/40 border border-sky-850/40 px-3 py-1 rounded-full text-xs text-sky-400 font-bold font-mono">
+              <div className="inline-flex items-center space-x-2 bg-sky-50 border border-sky-200 px-3 py-1 rounded-full text-xs text-sky-600 font-bold font-mono">
                 <Thermometer className="h-4 w-4" />
                 <span>Summer Climate Report: {activeState.avgTemp}</span>
               </div>
-              <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-                AC Repair & Installation in <span className="text-sky-400">{activeState.name}</span>
+              <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+                AC Repair & Installation in <span className="text-sky-600">{activeState.name}</span>
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Welcome to AeroNation's dedicated HVAC portal for <strong className="text-white">{activeState.name}</strong>. We offer immediate dispatching for central AC systems, thermostats, refrigerant leaks, and premium seasonal tune-ups across every single town and city in the state.
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Welcome to getacrepair's dedicated HVAC portal for <strong className="text-slate-900">{activeState.name}</strong>. We offer immediate dispatching for central AC systems, thermostats, refrigerant leaks, and premium seasonal tune-ups across every single town and city in the state.
               </p>
-              <div className="bg-slate-950/60 border border-slate-850 p-4 rounded-2xl flex items-start space-x-3">
-                <Sparkles className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {activeState.name} homeowners face {activeState.climateZone.toLowerCase()} conditions with summer peaks around {activeState.avgTemp}. Browse real cities below or call{" "}
+                <a href={PHONE_TEL_HREF} className="text-sky-600 font-semibold hover:underline">{PHONE_DISPLAY}</a>{" "}
+                for licensed same-day AC repair and installation dispatch.
+              </p>
+              <div className="bg-amber-50 border border-amber-200 p-4 rounded-2xl flex items-start space-x-3">
+                <Sparkles className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">Local SEO Advisory Tip</p>
-                  <p className="text-xs text-slate-400 leading-normal mt-1">{activeState.seoTip}</p>
+                  <p className="text-xs font-bold text-amber-600 uppercase tracking-wider font-mono">Local SEO Advisory Tip</p>
+                  <p className="text-xs text-slate-600 leading-normal mt-1">{activeState.seoTip}</p>
                 </div>
               </div>
             </div>
 
             {/* Quick State Info Stats */}
-            <div className="bg-slate-950/40 border border-slate-850 p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-inner">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono border-b border-slate-800 pb-2">State-Level Profile</h3>
+            <div className="bg-white border border-slate-200 p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono border-b border-slate-100 pb-2">State-Level Profile</h3>
               <div className="space-y-2">
-                <p className="text-xs text-slate-400 flex justify-between"><strong className="text-slate-300">State Code:</strong> <span className="font-mono font-bold text-white">{activeState.abbr}</span></p>
-                <p className="text-xs text-slate-400 flex justify-between"><strong className="text-slate-300">Capital:</strong> <span className="text-white font-medium">{activeState.capital}</span></p>
-                <p className="text-xs text-slate-400 flex justify-between"><strong className="text-slate-300">Climate Zone:</strong> <span className="text-white font-medium">{activeState.climateZone}</span></p>
+                <p className="text-xs text-slate-500 flex justify-between"><strong className="text-slate-600">State Code:</strong> <span className="font-mono font-bold text-slate-900">{activeState.abbr}</span></p>
+                <p className="text-xs text-slate-500 flex justify-between"><strong className="text-slate-600">Capital:</strong> <span className="text-slate-900 font-medium">{activeState.capital}</span></p>
+                <p className="text-xs text-slate-500 flex justify-between"><strong className="text-slate-600">Climate Zone:</strong> <span className="text-slate-900 font-medium">{activeState.climateZone}</span></p>
               </div>
-              <div className="border-t border-slate-800 pt-4 text-center">
+              <div className="border-t border-slate-100 pt-4 text-center">
                 <p className="text-[11px] text-slate-500 font-medium">Licensed & Registered State Contractor</p>
-                <p className="text-xs font-bold text-white font-mono mt-1">Class A License #{activeState.abbr}-9283-COOL</p>
+                <p className="text-xs font-bold text-slate-900 font-mono mt-1">Class A License #{activeState.abbr}-9283-COOL</p>
               </div>
             </div>
           </div>
@@ -227,8 +245,8 @@ export default function StateDirectory({
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white">Select Your Local Municipality</h2>
-                <p className="text-xs text-slate-400 mt-1">Select one of our major pre-positioned hubs below to load city-level HVAC service profiles.</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Select Your Local Municipality</h2>
+                <p className="text-xs text-slate-500 mt-1">Select one of our major pre-positioned hubs below to load city-level HVAC service profiles.</p>
               </div>
 
               {/* Custom City Dynamic Builder */}
@@ -238,11 +256,11 @@ export default function StateDirectory({
                   placeholder="Type any small or major city..."
                   value={customCityInput}
                   onChange={(e) => setCustomCityInput(e.target.value)}
-                  className="bg-slate-900 border border-slate-800 text-white placeholder-slate-600 rounded-xl px-4 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-sky-500 w-full sm:w-64"
+                  className="bg-white border border-slate-200 text-slate-900 placeholder-slate-500 rounded-xl px-4 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-sky-500 w-full sm:w-64"
                 />
                 <button 
                   type="submit"
-                  className="bg-sky-500 hover:bg-sky-400 text-white font-bold px-4 py-2 rounded-xl text-xs whitespace-nowrap active:scale-95 cursor-pointer"
+                  className="bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-xl text-xs whitespace-nowrap active:scale-95 cursor-pointer"
                 >
                   Generate Portal
                 </button>
@@ -250,22 +268,22 @@ export default function StateDirectory({
             </div>
 
             {/* Filter Input */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-950 p-4 rounded-2xl border border-slate-850">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-sky-50/40 p-4 rounded-2xl border border-slate-200">
               <div className="relative w-full md:w-80">
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
                 <input
                   type="text"
-                  placeholder="Filter through 600+ cities..."
+                  placeholder="Filter cities in this state..."
                   value={citySearchQuery}
                   onChange={(e) => {
                     setCitySearchQuery(e.target.value);
                     setVisibleCitiesCount(30);
                   }}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-xl py-2 pl-9 pr-4 text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-xs"
+                  className="w-full bg-white border border-slate-200 rounded-xl py-2 pl-9 pr-4 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-xs"
                 />
               </div>
               <p className="text-xs text-slate-500">
-                Showing <span className="text-white font-mono font-bold">{Math.min(activeState.cities.filter(c => c.name.toLowerCase().includes(citySearchQuery.toLowerCase())).length, visibleCitiesCount)}</span> of <span className="text-sky-400 font-mono font-bold">{activeState.cities.filter(c => c.name.toLowerCase().includes(citySearchQuery.toLowerCase())).length}</span> covered cities in {activeState.name}.
+                Showing <span className="text-slate-900 font-mono font-bold">{Math.min(activeState.cities.filter(c => c.name.toLowerCase().includes(citySearchQuery.toLowerCase())).length, visibleCitiesCount)}</span> of <span className="text-sky-600 font-mono font-bold">{activeState.cities.filter(c => c.name.toLowerCase().includes(citySearchQuery.toLowerCase())).length}</span> covered cities in {activeState.name}.
               </p>
             </div>
 
@@ -276,7 +294,7 @@ export default function StateDirectory({
               
               if (filtered.length === 0) {
                 return (
-                  <div className="text-center py-10 bg-slate-950/30 border border-slate-850 rounded-2xl">
+                  <div className="text-center py-10 bg-sky-50/40 border border-slate-200 rounded-2xl">
                     <p className="text-xs text-slate-500">No matching cities found in our {activeState.name} database.</p>
                   </div>
                 );
@@ -289,15 +307,15 @@ export default function StateDirectory({
                       <button
                         key={city.name}
                         onClick={() => handleCityClick(city.name)}
-                        className="bg-slate-950 border border-slate-800/80 hover:border-sky-500/60 p-4 rounded-xl text-left flex items-center justify-between transition-all cursor-pointer group hover:bg-slate-900/40"
+                        className="bg-white border border-slate-200 hover:border-sky-300 p-4 rounded-xl text-left flex items-center justify-between transition-all cursor-pointer group hover:shadow-md shadow-sm"
                         id={`city-btn-${city.name.toLowerCase()}`}
                       >
                         <div>
-                          <span className="text-xs font-bold text-slate-400 block font-mono">CITY UNIT</span>
-                          <h4 className="text-sm font-bold text-white mt-1 group-hover:text-sky-400 transition-colors">{city.name}, {activeState.abbr}</h4>
+                          <span className="text-xs font-bold text-slate-500 block font-mono">CITY UNIT</span>
+                          <h4 className="text-sm font-bold text-slate-900 mt-1 group-hover:text-sky-600 transition-colors">{city.name}, {activeState.abbr}</h4>
                           <span className="text-[10px] text-slate-500 mt-1 leading-normal block font-medium">Est. Temp: {city.avgSummerTemp}</span>
                         </div>
-                        <ChevronRight className="h-4 w-4 text-slate-600 group-hover:text-sky-400 transition-transform group-hover:translate-x-1" />
+                        <ChevronRight className="h-4 w-4 text-slate-400 group-hover:text-sky-600 transition-transform group-hover:translate-x-1" />
                       </button>
                     ))}
                   </div>
@@ -307,7 +325,7 @@ export default function StateDirectory({
                       <button
                         type="button"
                         onClick={() => setVisibleCitiesCount(prev => prev + 60)}
-                        className="bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 text-sky-400 hover:text-sky-300 text-xs font-bold px-6 py-3 rounded-xl transition-all cursor-pointer whitespace-nowrap shadow-lg animate-in fade-in"
+                        className="bg-white hover:bg-sky-50/40 border border-slate-200 hover:border-sky-300 text-sky-600 hover:text-sky-500 text-xs font-bold px-6 py-3 rounded-xl transition-all cursor-pointer whitespace-nowrap shadow-sm hover:shadow-md animate-in fade-in"
                       >
                         Load More Cities (+{filtered.length - visibleCitiesCount} remaining)
                       </button>
@@ -327,14 +345,14 @@ export default function StateDirectory({
           {/* Back to State Directory link */}
           <button 
             onClick={handleBackToState}
-            className="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-sky-300 font-mono hover:underline cursor-pointer"
+            className="inline-flex items-center space-x-2 text-xs font-bold text-sky-600 hover:text-sky-500 font-mono hover:underline cursor-pointer"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>BACK TO {activeState.name.toUpperCase()} CITIES DIRECTORY</span>
           </button>
 
           {/* Segmented Tab Control for all 6 HVAC Services */}
-          <div className="flex overflow-x-auto pb-3 gap-2 scrollbar-thin border-b border-slate-800" id="city-service-tabs">
+          <div className="flex overflow-x-auto pb-3 gap-2 scrollbar-thin border-b border-slate-200" id="city-service-tabs">
             {[
               { key: "ac-repair", label: "AC Repair" },
               { key: "ac-service", label: "AC Service" },
@@ -351,8 +369,8 @@ export default function StateDirectory({
                 }}
                 className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer shrink-0 ${
                   activeSubPage === srv.key
-                    ? "bg-sky-500 text-white shadow-lg shadow-sky-500/25"
-                    : "bg-slate-900 text-slate-400 hover:bg-slate-850 hover:text-white"
+                    ? "bg-sky-600 text-white shadow-sm hover:shadow-md"
+                    : "bg-white text-slate-600 border border-slate-200 hover:bg-sky-50/40 hover:text-slate-900"
                 }`}
               >
                 {srv.label}
@@ -366,7 +384,6 @@ export default function StateDirectory({
             activeSubPage={activeSubPage}
             onNavigateSubPage={(subPage) => setActiveSubPage(subPage)}
             onNavigateCity={(city) => setSelectedCityName(city)}
-            onBookService={onBookService}
           />
 
           {/* Legacy City Profile and Content bypassed */}
@@ -398,7 +415,7 @@ export default function StateDirectory({
                         AC Service & Maintenance in <span className="text-sky-400">{selectedCityName}, {activeState.abbr}</span>
                       </h1>
                       <p className="text-sm text-slate-300 leading-relaxed">
-                        AeroNation provides professional, EPA-certified preventative air conditioning servicing, seasonal tune-ups, system inspections, filter replacements, and deep coil cleaning in <strong className="text-white">{selectedCityName}</strong> to optimize efficiency and extend equipment lifespan.
+                        getacrepair provides professional, EPA-certified preventative air conditioning servicing, seasonal tune-ups, system inspections, filter replacements, and deep coil cleaning in <strong className="text-white">{selectedCityName}</strong> to optimize efficiency and extend equipment lifespan.
                       </p>
                       <div className="text-xs text-slate-400 leading-normal bg-slate-950 p-4 rounded-xl border border-slate-850">
                         <strong className="text-slate-300 block mb-1">Local Environmental Assessment:</strong>
@@ -410,24 +427,24 @@ export default function StateDirectory({
                     <div className="bg-slate-950 border border-slate-800/80 p-6 rounded-2xl w-full lg:w-80 flex flex-col justify-between space-y-4 shadow-inner shrink-0">
                       <div>
                         <span className="text-[10px] text-emerald-400 font-bold tracking-widest uppercase font-mono block">● Preventive Checkups Active</span>
-                        <h3 className="text-lg font-bold text-white mt-1">Book Precision Tune-Up</h3>
-                        <p className="text-xs text-slate-500 mt-1 leading-normal">Schedule your pre-season multi-point service with a local certified mechanic.</p>
+                        <h3 className="text-lg font-bold text-white mt-1">Need a Precision Tune-Up?</h3>
+                        <p className="text-xs text-slate-500 mt-1 leading-normal">Call to request pre-season multi-point service with a local certified mechanic.</p>
                       </div>
 
                       <div className="space-y-2 pt-2 border-t border-slate-850">
-                        <button
-                          onClick={() => onBookService(activeState.abbr, selectedCityName, ServiceType.AC_MAINTENANCE)}
+                        <a
+                          href={PHONE_TEL_HREF}
                           className="w-full bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all cursor-pointer flex items-center justify-center space-x-1.5 shadow-lg"
                         >
-                          <Calendar className="h-4 w-4" />
-                          <span>Schedule AC Service</span>
-                        </button>
+                          <Phone className="h-4 w-4" />
+                          <span>Call Now: {PHONE_DISPLAY}</span>
+                        </a>
                         <a
-                          href="tel:13802270861"
+                          href={PHONE_TEL_HREF}
                           className="w-full border border-slate-800 hover:bg-slate-900 text-slate-300 font-bold py-2.5 px-4 rounded-xl text-xs transition-all cursor-pointer flex items-center justify-center space-x-1.5"
                         >
                           <Phone className="h-3.5 w-3.5" />
-                          <span>Call 13802270861</span>
+                          <span>Call {PHONE_DISPLAY}</span>
                         </a>
                       </div>
                     </div>
@@ -469,7 +486,7 @@ export default function StateDirectory({
                     <div className="space-y-2">
                       <h2 className="text-xl sm:text-2xl font-bold text-white">Our Precision 12-Point AC Servicing Protocol</h2>
                       <p className="text-xs text-slate-400 max-w-2xl leading-relaxed">
-                        To maintain compliance with manufacturer warranties and ensure maximum operating parameters, every AeroNation preventive service visit includes:
+                        To maintain compliance with manufacturer warranties and ensure maximum operating parameters, every getacrepair preventive service visit includes:
                       </p>
                     </div>
 
@@ -532,7 +549,7 @@ export default function StateDirectory({
                         <span>Complete Cooling Directory for {selectedCityName}, {activeState.abbr}</span>
                       </h3>
                       <p className="text-xs text-slate-400 leading-relaxed">
-                        We offer a complete suite of professional HVAC services in the {selectedCityName} area. Instantly navigate our local pages or book specific services below:
+                        We offer a complete suite of professional HVAC services in the {selectedCityName} area. Instantly navigate our local pages or call for service below:
                       </p>
                     </div>
 
@@ -561,23 +578,23 @@ export default function StateDirectory({
                         <span className="text-[10px] text-slate-500 block mt-1">Multi-point tune-up, coil washes, filter replacements</span>
                       </button>
 
-                      <button
-                        onClick={() => onBookService(activeState.abbr, selectedCityName, ServiceType.AC_INSTALLATION)}
-                        className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group"
+                      <a
+                        href={PHONE_TEL_HREF}
+                        className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group block"
                       >
                         <strong className="text-xs text-sky-400 block font-mono font-bold">03. AC INSTALLATION</strong>
                         <span className="text-xs text-white font-bold block mt-1 group-hover:text-sky-400">System Installation</span>
                         <span className="text-[10px] text-slate-500 block mt-1">High-SEER central air replacement, modern heat pumps</span>
-                      </button>
+                      </a>
 
-                      <button
-                        onClick={() => onBookService(activeState.abbr, selectedCityName, ServiceType.EMERGENCY_SERVICE)}
-                        className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group"
+                      <a
+                        href={PHONE_TEL_HREF}
+                        className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group block"
                       >
                         <strong className="text-xs text-sky-400 block font-mono font-bold">04. HVAC REPAIR</strong>
                         <span className="text-xs text-white font-bold block mt-1 group-hover:text-sky-400">Emergency Support</span>
                         <span className="text-[10px] text-slate-500 block mt-1">Immediate diagnostics and immediate recovery solutions</span>
-                      </button>
+                      </a>
                     </div>
                   </div>
 
@@ -635,7 +652,7 @@ export default function StateDirectory({
                       AC Repair & Installation in <span className="text-sky-400">{selectedCityName}, {activeState.abbr}</span>
                     </h1>
                     <p className="text-sm text-slate-300 leading-relaxed">
-                      AeroNation provides local 24/7 same-day central air conditioning repair, high-SEER installations, leak detections, and thermostat calibrations in <strong className="text-white">{selectedCityName}</strong> and nearby subdivisions.
+                      getacrepair provides local 24/7 same-day central air conditioning repair, high-SEER installations, leak detections, and thermostat calibrations in <strong className="text-white">{selectedCityName}</strong> and nearby subdivisions.
                     </p>
                     <div className="text-xs text-slate-400 leading-normal bg-slate-950 p-4 rounded-xl border border-slate-850">
                       <strong className="text-slate-300 block mb-1">Local Cooling Profile:</strong>
@@ -652,19 +669,19 @@ export default function StateDirectory({
                     </div>
 
                     <div className="space-y-2 pt-2 border-t border-slate-850">
-                      <button
-                        onClick={() => onBookService(activeState.abbr, selectedCityName, ServiceType.AC_REPAIR)}
+                      <a
+                        href={PHONE_TEL_HREF}
                         className="w-full bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-4 rounded-xl text-xs transition-all cursor-pointer flex items-center justify-center space-x-1.5 shadow-lg animate-pulse"
                       >
-                        <Calendar className="h-4 w-4" />
-                        <span>Schedule AC Repair</span>
-                      </button>
+                        <Phone className="h-4 w-4" />
+                        <span>Call Now: {PHONE_DISPLAY}</span>
+                      </a>
                       <a
-                        href="tel:13802270861"
+                        href={PHONE_TEL_HREF}
                         className="w-full border border-slate-800 hover:bg-slate-900 text-slate-300 font-bold py-2.5 px-4 rounded-xl text-xs transition-all cursor-pointer flex items-center justify-center space-x-1.5"
                       >
                         <Phone className="h-3.5 w-3.5" />
-                        <span>Call 13802270861</span>
+                        <span>Call {PHONE_DISPLAY}</span>
                       </a>
                     </div>
                   </div>
@@ -696,7 +713,7 @@ export default function StateDirectory({
                     <div className="space-y-4">
                       <h3 className="text-lg font-bold text-white flex items-center space-x-2">
                         <Shield className="h-5 w-5 text-sky-400" />
-                        <span>AeroNation Trust Guarantee</span>
+                        <span>getacrepair Trust Guarantee</span>
                       </h3>
                       <div className="space-y-3">
                         <div className="flex items-start space-x-3 text-xs leading-normal">
@@ -731,7 +748,7 @@ export default function StateDirectory({
                       <span>Complete Cooling Directory for {selectedCityName}, {activeState.abbr}</span>
                     </h3>
                     <p className="text-xs text-slate-400 leading-relaxed">
-                      We offer a complete suite of professional HVAC services in the {selectedCityName} area. Instantly navigate our local pages or book specific services below:
+                      We offer a complete suite of professional HVAC services in the {selectedCityName} area. Instantly navigate our local pages or call for service below:
                     </p>
                   </div>
 
@@ -760,23 +777,23 @@ export default function StateDirectory({
                       <span className="text-[10px] text-slate-500 block mt-1">Multi-point tune-up, coil washes, filter replacements</span>
                     </button>
 
-                    <button
-                      onClick={() => onBookService(activeState.abbr, selectedCityName, ServiceType.AC_INSTALLATION)}
-                      className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group"
+                    <a
+                      href={PHONE_TEL_HREF}
+                      className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group block"
                     >
                       <strong className="text-xs text-sky-400 block font-mono font-bold">03. AC INSTALLATION</strong>
                       <span className="text-xs text-white font-bold block mt-1 group-hover:text-sky-400">System Installation</span>
                       <span className="text-[10px] text-slate-500 block mt-1">High-SEER central air replacement, modern heat pumps</span>
-                    </button>
+                    </a>
 
-                    <button
-                      onClick={() => onBookService(activeState.abbr, selectedCityName, ServiceType.EMERGENCY_SERVICE)}
-                      className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group"
+                    <a
+                      href={PHONE_TEL_HREF}
+                      className="bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-sky-500 p-4 rounded-xl text-left transition-all duration-200 cursor-pointer group block"
                     >
                       <strong className="text-xs text-sky-400 block font-mono font-bold">04. HVAC REPAIR</strong>
                       <span className="text-xs text-white font-bold block mt-1 group-hover:text-sky-400">Emergency Support</span>
                       <span className="text-[10px] text-slate-500 block mt-1">Immediate diagnostics and immediate recovery solutions</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
 

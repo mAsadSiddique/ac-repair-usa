@@ -1,0 +1,23 @@
+{
+  "name": "getacrepair AC Repair & Installation",
+  "short_name": "getacrepair",
+  "description": "Nationwide emergency AC repair, installation, and HVAC dispatch. Call +1 (866) 330-1137.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0284c7",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/og-cover.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg"
+    }
+  ]
+}

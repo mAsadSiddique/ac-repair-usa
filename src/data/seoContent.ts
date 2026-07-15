@@ -25,7 +25,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   "ac-repair": {
     serviceName: "AC Repair",
     heroTitle: "Emergency AC Repair in {city}, {state}",
-    heroDesc: "Struggling with a hot, humid home? AeroNation offers immediate, licensed, and EPA-certified emergency air conditioning repair services in {city}, {state}, 24 hours a day. From quick capacitor swaps to complex compressor troubleshooting, our expert technicians are dispatched in fully stocked service vehicles to restore your cooling comfort on the very first visit.",
+    heroDesc: "Struggling with a hot, humid home? getacrepair offers immediate, licensed, and EPA-certified emergency air conditioning repair services in {city}, {state}, 24 hours a day. From quick capacitor swaps to complex compressor troubleshooting, our expert technicians are dispatched in fully stocked service vehicles to restore your cooling comfort on the very first visit.",
     aboutParagraphs: [
       "When the mercury rises in {city}, your home's air conditioner is the only barrier against suffocating heat and oppressive humidity. Unfortunately, continuous high-thermal loading forces your cooling system to run long, grueling cycles, pushing critical components like the dual-run capacitor, fan relays, and high-pressure compressor to their thermodynamic limits. When a breakdown occurs, you need more than a generic fix; you require an expert, high-precision intervention by local technicians who understand the environmental and mechanical demands specific to {city}.",
       "Our diagnostic protocol is meticulous and scientific. Upon arrival, an EPA-certified technician hooks up advanced digital manifold gauges to measure liquid and suction line pressures. We check the temperature split (Delta-T) across your indoor evaporator coil and outdoor condenser, confirming that heat is being extracted efficiently. We run a full electrical sweep, measuring the microfarad output of your capacitors to ensure they lie within the safe nominal range. This structured approach ensures we identify the precise root cause rather than merely treating the symptoms.",
@@ -166,7 +166,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
     reviews: [
       {
         author: "Marcus T.",
-        text: "Our AC died on a 98-degree afternoon. AeroNation was at my house within 90 minutes. The technician diagnosed a blown capacitor, replaced it on the spot, and had cold air blowing within 15 minutes. Best HVAC experience ever!",
+        text: "Our AC died on a 98-degree afternoon. getacrepair was at my house within 90 minutes. The technician diagnosed a blown capacitor, replaced it on the spot, and had cold air blowing within 15 minutes. Best HVAC experience ever!",
         rating: 5
       },
       {
@@ -192,7 +192,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       "A neglected air conditioning unit loses up to 15% of its operating efficiency each year due to dirt accumulation on heat-exchange surfaces. When the outdoor condenser coils are blanketed with dust, pollen, and lawn clippings, the compressor cannot reject heat effectively, forcing it to run longer cycles and draw excess electrical amperage. During our precision service, we perform a deep chemical rinse of the condenser fins, clearing all micro-debris and dropping your compressor's operating temperature and power consumption.",
       "Our technicians also pay close attention to your indoor evaporator coil and air handling unit. We inspect the blower motor's electrical draw, checking that the fan belt is calibrated to correct tension curves. We clear the primary and secondary condensate drain lines, applying specialized slow-release biocide tablets to prevent algae buildup, mold growth, and eventual water overflows that can ruin ceilings and trigger system shut-offs.",
       "An essential aspect of annual maintenance is the inspection of dual-run capacitors and high-voltage electrical contacts. Capacitors degrade over time due to high heat, slowly losing their capacitance. If left unchecked, a weak capacitor places immense strain on the compressor's start windings, leading to premature mechanical failure. We measure capacitor microfarads against manufacturer tolerance sheets, replacing worn-out parts before they leave you stranded in the middle of a heatwave.",
-      "By scheduling regular AC service with AeroNation in {city}, you protect your equipment, maintain compliance with your manufacturer's 10-year warranty guidelines, and optimize your indoor air quality. We provide an itemized mechanical diagnostic report at the end of every tune-up, detailing all operating pressures, electrical draws, and temperature drops so you have a complete paper trail of your HVAC system's health."
+      "By scheduling regular AC service with getacrepair in {city}, you protect your equipment, maintain compliance with your manufacturer's 10-year warranty guidelines, and optimize your indoor air quality. We provide an itemized mechanical diagnostic report at the end of every tune-up, detailing all operating pressures, electrical draws, and temperature drops so you have a complete paper trail of your HVAC system's health."
     ],
     problems: [
       {
@@ -347,13 +347,13 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   "ac-installation": {
     serviceName: "AC Installation",
     heroTitle: "High-Efficiency AC Installation in {city}, {state}",
-    heroDesc: "Ready to upgrade your home comfort? AeroNation delivers premier, high-efficiency central air conditioning installation and complete system replacement in {city}, {state}. Our EPA-certified installation teams conduct full Manual J load calculations, structural duct designs, and premium system commissioning to guarantee maximum efficiency and up to 40% lower utility bills.",
+    heroDesc: "Ready to upgrade your home comfort? getacrepair delivers premier, high-efficiency central air conditioning installation and complete system replacement in {city}, {state}. Our EPA-certified installation teams conduct full Manual J load calculations, structural duct designs, and premium system commissioning to guarantee maximum efficiency and up to 40% lower utility bills.",
     aboutParagraphs: [
       "Installing a new central air conditioning system is one of the most significant capital investments you will make in your home. While selecting a premium, high-efficiency brand is important, the single most critical factor determining your new system's lifespan, efficiency, and reliability is the quality of the installation itself. According to the Department of Energy, more than half of all new residential HVAC systems are installed incorrectly, leading to frequent breakdowns, uneven cooling, and high energy bills from day one.",
-      "At AeroNation, we do not believe in guesswork or shortcuts. Every installation we undertake in {city} begins with a rigorous Manual J Heat Load Calculation. This engineering standard analyzes your home's total square footage, ceiling heights, insulation values, window types, local climate data, and orientation to specify an AC system with the precise cooling capacity required. Oversizing an air conditioner leads to rapid short-cycling, which wears out the compressor and leaves high humidity levels inside, while undersizing forces the system to run continuously without ever reaching comfort levels.",
+      "At getacrepair, we do not believe in guesswork or shortcuts. Every installation we undertake in {city} begins with a rigorous Manual J Heat Load Calculation. This engineering standard analyzes your home's total square footage, ceiling heights, insulation values, window types, local climate data, and orientation to specify an AC system with the precise cooling capacity required. Oversizing an air conditioner leads to rapid short-cycling, which wears out the compressor and leaves high humidity levels inside, while undersizing forces the system to run continuously without ever reaching comfort levels.",
       "Our licensed installation crews handle every aspect of the physical upgrade. We safely evacuate and recycle your old system's refrigerant in strict accordance with EPA guidelines, remove the old condenser and evaporator coils, and install a heavy-duty composite equipment pad engineered to isolate compressor vibration. We run new, insulated copper line sets, connect low-voltage control wiring, and mount a high-efficiency secondary condensation pan with an integrated emergency float switch to protect your ceilings from water damage.",
       "Once the physical components are in place, we perform essential commissioning tests. We pull a deep vacuum on the refrigerant lines, ensuring it holds at under 500 microns to confirm that no moisture or non-condensable gases remain in the system. We then weigh in the precise amount of eco-friendly refrigerant, balancing the system's superheat and subcooling levels to meet the manufacturer's exact specifications. We verify duct static pressures, adjust the multi-speed blower fan, and mount a modern digital thermostat.",
-      "When you choose AeroNation for your air conditioning installation in {city}, you receive a state-of-the-art cooling platform that runs smoothly, quiet operation, and lower monthly power bills. We back all our installation projects with an industry-leading 10-year manufacturer equipment warranty paired with our dedicated 2-year labor comfort guarantee, providing you with absolute peace of mind for years to come."
+      "When you choose getacrepair for your air conditioning installation in {city}, you receive a state-of-the-art cooling platform that runs smoothly, quiet operation, and lower monthly power bills. We back all our installation projects with an industry-leading 10-year manufacturer equipment warranty paired with our dedicated 2-year labor comfort guarantee, providing you with absolute peace of mind for years to come."
     ],
     problems: [
       {
@@ -423,7 +423,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       }
     ],
     emergencyTitle: "Flexible Financing for Your New AC System",
-    emergencyDesc: "Upgrading your home's HVAC system is a major financial decision. To help make comfort accessible, AeroNation offers a variety of flexible residential financing plans in {city}, including low monthly payments and promotional 0% APR options for qualified buyers.",
+    emergencyDesc: "Upgrading your home's HVAC system is a major financial decision. To help make comfort accessible, getacrepair offers a variety of flexible residential financing plans in {city}, including low monthly payments and promotional 0% APR options for qualified buyers.",
     whyChooseUs: [
       {
         title: "Licensed Technicians",
@@ -470,7 +470,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       },
       {
         question: "What warranties are included with a new air conditioning installation?",
-        answer: "Our standard installations feature a comprehensive 10-year manufacturer equipment warranty on all major components (including the compressor and coils) upon system registration. In addition, AeroNation provides our own 2-year labor and workmanship comfort warranty to guarantee your satisfaction."
+        answer: "Our standard installations feature a comprehensive 10-year manufacturer equipment warranty on all major components (including the compressor and coils) upon system registration. In addition, getacrepair provides our own 2-year labor and workmanship comfort warranty to guarantee your satisfaction."
       },
       {
         question: "Do you offer financing options for new cooling systems in {city}?",
@@ -508,13 +508,13 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   "hvac-repair": {
     serviceName: "HVAC Repair",
     heroTitle: "Comprehensive HVAC Repair in {city}, {state}",
-    heroDesc: "Is your home's heating or cooling system failing to keep up? AeroNation provides expert, licensed, and EPA-certified HVAC repair services in {city}, {state}. Our local technicians diagnose and resolve faults across central air conditioners, gas furnaces, modern heat pumps, and ductwork systems to keep your household safe and comfortable year-round.",
+    heroDesc: "Is your home's heating or cooling system failing to keep up? getacrepair provides expert, licensed, and EPA-certified HVAC repair services in {city}, {state}. Our local technicians diagnose and resolve faults across central air conditioners, gas furnaces, modern heat pumps, and ductwork systems to keep your household safe and comfortable year-round.",
     aboutParagraphs: [
       "Your home's heating, ventilation, and air conditioning (HVAC) system is a complex, integrated network of mechanical, electrical, and thermodynamic processes. A problem in one area can trigger performance issues throughout the entire infrastructure. For example, a failing blower motor in your furnace will not only leave you cold in the winter, but it will also cause your indoor evaporator coil to freeze and halt your cooling in the summer. When you face HVAC issues in {city}, you need comprehensive, expert repair services that address the complete system.",
-      "At AeroNation, our licensed HVAC technicians are trained to analyze your heating and cooling systems as a single, cohesive ecosystem. We carry advanced digital testing tools, combustion analyzers, and electronic airflow meters to diagnose issues across all system types. Whether you have a split-system central AC, a gas-fired furnace, or a modern high-efficiency heat pump, we have the experience and parts inventory to execute lasting, code-compliant repairs.",
+      "At getacrepair, our licensed HVAC technicians are trained to analyze your heating and cooling systems as a single, cohesive ecosystem. We carry advanced digital testing tools, combustion analyzers, and electronic airflow meters to diagnose issues across all system types. Whether you have a split-system central AC, a gas-fired furnace, or a modern high-efficiency heat pump, we have the experience and parts inventory to execute lasting, code-compliant repairs.",
       "Gas furnaces require specialized diagnostic and safety checks. A failing igniter or a dirty flame sensor can prevent your heating system from firing up, while a cracked heat exchanger poses a severe, life-threatening carbon monoxide hazard to your household. During our diagnostic sweep, we perform visual camera inspections of the heat exchanger, check draft inducer motor amperages, clean the flame sensor, and verify that gas manifold pressures meet the manufacturer's nominal ratings, ensuring safe and reliable heating.",
       "Heat pump systems represent another highly technical discipline. A heat pump works as a reversible air conditioner, utilizing a specialized reversing valve to either extract heat from your home in summer or pump heat inside during the winter. Reversing valve failures, refrigerant charge issues, or faulty defrost control boards can cause your system to lose heating capacity during cold winter nights. Our technicians excel at troubleshooting these dual-system platforms, restoring seamless operation.",
-      "We believe in transparent, professional craftsmanship. Before we begin any HVAC repairs in {city}, we provide a comprehensive, itemized flat-rate quote. We use premium, OEM-certified replacement parts and double-test every safety switch and circuit to guarantee our work. With our 1-year workmanship warranty protecting your investment, you can trust AeroNation to keep your home's primary environmental controls running smoothly through every season."
+      "We believe in transparent, professional craftsmanship. Before we begin any HVAC repairs in {city}, we provide a comprehensive, itemized flat-rate quote. We use premium, OEM-certified replacement parts and double-test every safety switch and circuit to guarantee our work. With our 1-year workmanship warranty protecting your investment, you can trust getacrepair to keep your home's primary environmental controls running smoothly through every season."
     ],
     problems: [
       {
@@ -659,7 +659,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       },
       {
         author: "Arthur L.",
-        text: "AeroNation has the best technicians. They explain the problem clearly, provide options, and complete the work quickly. No high-pressure sales tactics. Honest, high-quality HVAC repairs.",
+        text: "getacrepair has the best technicians. They explain the problem clearly, provide options, and complete the work quickly. No high-pressure sales tactics. Honest, high-quality HVAC repairs.",
         rating: 5
       }
     ],
@@ -669,10 +669,10 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   "hvac-installation": {
     serviceName: "HVAC Installation",
     heroTitle: "HVAC System Installation in {city}, {state}",
-    heroDesc: "Ready for a complete home comfort transformation? AeroNation delivers premier, high-efficiency heating and cooling HVAC system installations in {city}, {state}. Our EPA-certified installation crews conduct comprehensive Manual J heat load calculations, design structural ductwork, and install matching central air and high-efficiency furnace packages to guarantee maximum comfort and up to 45% lower utility bills.",
+    heroDesc: "Ready for a complete home comfort transformation? getacrepair delivers premier, high-efficiency heating and cooling HVAC system installations in {city}, {state}. Our EPA-certified installation crews conduct comprehensive Manual J heat load calculations, design structural ductwork, and install matching central air and high-efficiency furnace packages to guarantee maximum comfort and up to 45% lower utility bills.",
     aboutParagraphs: [
       "Replacing your home's complete heating and cooling system is a major capital improvement project that significantly affects your property value, monthly operating costs, and daily comfort. A matched HVAC system installation—where a new high-efficiency central air conditioner is paired with a matching high-efficiency gas furnace or heat pump—ensures that both components utilize matching airflow velocities, communication protocols, and blower motor speeds. This integration optimizes system efficiency, extends the equipment's lifespan, and simplifies future maintenance.",
-      "At AeroNation, our engineering and installation crews hold themselves to the highest standards of technical precision. Every project in {city} begins with an in-depth energy audit and Manual J Heat Load Calculation. We analyze your home's total thermal properties, including wall structures, insulation levels, window placement, ceiling heights, and climate data. This careful study prevents the severe issues associated with system oversizing (frequent short-cycling and high indoor humidity) and undersizing (continuous running and inability to match thermostat settings).",
+      "At getacrepair, our engineering and installation crews hold themselves to the highest standards of technical precision. Every project in {city} begins with an in-depth energy audit and Manual J Heat Load Calculation. We analyze your home's total thermal properties, including wall structures, insulation levels, window placement, ceiling heights, and climate data. This careful study prevents the severe issues associated with system oversizing (frequent short-cycling and high indoor humidity) and undersizing (continuous running and inability to match thermostat settings).",
       "During a standard matched HVAC installation, our crews handle the complete structural upgrade. We safely evacuate and recycle your older system's refrigerant, extract the outdated indoor air handler or furnace, and clear the area. We build new, level equipment pads for the outdoor condenser, install high-grade sheet metal plenums with custom supply collars, run insulated copper line sets, connect new electrical service whips, and install secondary condensation pans with electronic float cutoff switches.",
       "Our technicians specialize in the installation of ultra-high-efficiency variable-speed and two-stage heating and cooling systems. A standard single-stage system runs at either 100% capacity or is completely off, leading to frequent temperature swings. Two-stage and variable-speed systems run longer, lower-capacity cycles that consume up to 45% less energy, run virtually silent, and maintain a highly consistent indoor temperature within half a degree of your thermostat setting.",
       "Every HVAC system installation we complete in {city} is a turn-key project. We handle all local building permits, municipal inspections, and manufacturer warranty registrations on your behalf. We pull a deep vacuum on the refrigerant lines to under 500 microns, weigh in the factory refrigerant charge, calibrate the heating and cooling cycles, and program your new smart thermostat. We stand behind our workmanship with a comprehensive 10-year manufacturer warranty and our own 2-year comfort guarantee."
@@ -745,7 +745,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       }
     ],
     emergencyTitle: "Flexible Residential Financing Options",
-    emergencyDesc: "We believe that every household deserves safe, reliable, and high-efficiency heating and cooling. To help make a new matched HVAC system affordable, AeroNation offers flexible financing options in {city}, including low interest rates and promotional 0% APR plans for qualified homeowners.",
+    emergencyDesc: "We believe that every household deserves safe, reliable, and high-efficiency heating and cooling. To help make a new matched HVAC system affordable, getacrepair offers flexible financing options in {city}, including low interest rates and promotional 0% APR plans for qualified homeowners.",
     whyChooseUs: [
       {
         title: "Licensed Technicians",
@@ -796,7 +796,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       },
       {
         question: "Do you handle the city permits and registrations for the new installation?",
-        answer: "Yes, AeroNation handles all aspects of your project from start to finish. We secure the required local building permits, schedule municipal safety inspections, and register your new equipment with the manufacturer to ensure your 10-year warranty is fully activated."
+        answer: "Yes, getacrepair handles all aspects of your project from start to finish. We secure the required local building permits, schedule municipal safety inspections, and register your new equipment with the manufacturer to ensure your 10-year warranty is fully activated."
       },
       {
         question: "What is the difference between single-stage, two-stage, and variable-speed systems?",
@@ -820,7 +820,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       },
       {
         author: "George H.",
-        text: "Honest, dependable, and highly skilled. They didn't try to upsell us on equipment we didn't need. They designed a perfectly balanced heating and cooling system for our home. Highly recommend AeroNation!",
+        text: "Honest, dependable, and highly skilled. They didn't try to upsell us on equipment we didn't need. They designed a perfectly balanced heating and cooling system for our home. Highly recommend getacrepair!",
         rating: 5
       }
     ],
@@ -830,13 +830,13 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   "heating-repair": {
     serviceName: "Heating Repair",
     heroTitle: "Emergency Heating & Furnace Repair in {city}, {state}",
-    heroDesc: "Is a broken furnace leaving your family in the cold? AeroNation provides fast, reliable, and licensed emergency heating and furnace repair services in {city}, {state}. Our background-checked HVAC technicians are available 24/7 to diagnose and repair gas furnaces, electric air handlers, and modern heat pumps to restore warmth to your home safely.",
+    heroDesc: "Is a broken furnace leaving your family in the cold? getacrepair provides fast, reliable, and licensed emergency heating and furnace repair services in {city}, {state}. Our background-checked HVAC technicians are available 24/7 to diagnose and repair gas furnaces, electric air handlers, and modern heat pumps to restore warmth to your home safely.",
     aboutParagraphs: [
-      "When winter weather sweeps through {city}, a reliable heating system is more than a matter of convenience; it is a critical safety system that protects your household from sub-freezing temperatures and prevents your plumbing pipes from freezing and bursting. A broken furnace or failing heat pump during a winter freeze constitutes a real residential emergency. At AeroNation, we maintain on-call crews of licensed, highly trained heating specialists to deliver immediate, round-the-clock restorations.",
+      "When winter weather sweeps through {city}, a reliable heating system is more than a matter of convenience; it is a critical safety system that protects your household from sub-freezing temperatures and prevents your plumbing pipes from freezing and bursting. A broken furnace or failing heat pump during a winter freeze constitutes a real residential emergency. At getacrepair, we maintain on-call crews of licensed, highly trained heating specialists to deliver immediate, round-the-clock restorations.",
       "Heating systems are highly complex appliances that combine high-voltage electrical circuits, fuel combustion processes, and critical ventilation requirements. Gas-fired furnaces require scientific diagnostics to ensure safe, legal operation. Combustion issues, dirty flame sensors, clogged flue vents, or a failing igniter can cause the system to shut down as a safety precaution. Our technicians carry specialized diagnostic tools, combustion gas analyzers, and draft pressure meters to isolate the failure quickly.",
       "A cracked heat exchanger represents the most serious safety hazard in a residential furnace. The heat exchanger is a sealed metal chamber where fuel is burned; the air blowing through your ducts flows around this chamber to absorb heat. If the heat exchanger develops even a hairline fracture, toxic combustion gases—including odorless, colorless carbon monoxide—can leak directly into your indoor air supply. We perform rigorous camera inspections on every furnace we service, verifying that your heat exchanger is completely sound.",
       "Heat pump systems require a unique set of technical diagnostic skills. Unlike gas furnaces, a heat pump heats your home by reversing its refrigeration cycle, extracting heat from the cold outdoor air and pumping it inside. During extremely cold winter nights, heat pumps utilize secondary auxiliary electric heating strips to maintain comfortable temperatures. Failed reversing valves, bad defrost control boards, or burnt auxiliary heating relays can cause your heat pump to lose capacity. We excel at troubleshooting these dual-system platforms.",
-      "We believe in honest, transparent pricing. When you call AeroNation for heating repair in {city}, our technician will perform a complete diagnostic sweep and present an exact, itemized flat-rate quote detailing all required parts and labor before any work begins. We stock our service vehicles with universal igniters, flame sensors, gas valves, limit switches, and blower motors to complete most repairs on-site on our very first visit, backing all our work with our 1-year comfort warranty."
+      "We believe in honest, transparent pricing. When you call getacrepair for heating repair in {city}, our technician will perform a complete diagnostic sweep and present an exact, itemized flat-rate quote detailing all required parts and labor before any work begins. We stock our service vehicles with universal igniters, flame sensors, gas valves, limit switches, and blower motors to complete most repairs on-site on our very first visit, backing all our work with our 1-year comfort warranty."
     ],
     problems: [
       {
@@ -971,7 +971,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
     reviews: [
       {
         author: "William G.",
-        text: "Our furnace died during a snowstorm. AeroNation had a technician at our house in under two hours. He replaced a bad igniter quickly, checked our carbon monoxide levels, and was incredibly polite. Exceptional service!",
+        text: "Our furnace died during a snowstorm. getacrepair had a technician at our house in under two hours. He replaced a bad igniter quickly, checked our carbon monoxide levels, and was incredibly polite. Exceptional service!",
         rating: 5
       },
       {
@@ -981,7 +981,7 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
       },
       {
         author: "James M.",
-        text: "Technician was very thorough and knowledgeable. He conducted a complete safety check on our heat exchanger and explained everything he was doing. AeroNation is honest, professional, and highly skilled.",
+        text: "Technician was very thorough and knowledgeable. He conducted a complete safety check on our heat exchanger and explained everything he was doing. getacrepair is honest, professional, and highly skilled.",
         rating: 5
       }
     ],

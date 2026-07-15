@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Legal pages are indexable for trust signals
+Allow: /terms
+Allow: /privacy
+
+Sitemap: https://getacrepairusa.com/sitemap.xml
+Sitemap: https://getacrepairusa.com/sitemap-images.xml
+Host: https://getacrepairusa.com
+

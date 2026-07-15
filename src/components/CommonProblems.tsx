@@ -4,6 +4,7 @@
  */
 
 import React from "react";
+import { PHONE_TEL_HREF, PHONE_DISPLAY } from "../data/phone";
 import { 
   Snowflake, Flame, Droplets, AlertTriangle, Wind, 
   CheckCircle2, Cpu, Activity, Zap, RotateCw, 
@@ -147,14 +148,14 @@ export default function CommonProblems() {
       
       {/* Header Area */}
       <div className="text-center space-y-4 max-w-4xl mx-auto">
-        <div className="inline-flex items-center space-x-2 bg-sky-500/10 border border-sky-500/20 px-3 py-1.5 rounded-full text-xs text-sky-400 font-bold font-mono uppercase tracking-wider">
-          <Sparkles className="h-4 w-4 text-sky-400" />
+        <div className="inline-flex items-center space-x-2 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-full text-xs text-sky-600 font-bold font-mono uppercase tracking-wider">
+          <Sparkles className="h-4 w-4 text-sky-600" />
           <span>Professional System Diagnosis</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
           Common AC Problems We Fix
         </h2>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-medium">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
           Our certified HVAC technicians diagnose and repair all types of residential and commercial air conditioning problems across the United States. Whether your AC is not cooling properly, making unusual noises, leaking water, or completely stopped working, our experienced team provides fast, reliable, and professional solutions to restore your comfort.
         </p>
       </div>
@@ -166,32 +167,32 @@ export default function CommonProblems() {
           return (
             <div 
               key={prob.id} 
-              className="bg-slate-900 border border-slate-800 hover:border-sky-500 p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-md transition-all duration-300 hover:shadow-sky-500/5 group"
+              className="bg-white border border-slate-200 hover:border-sky-300 p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-all duration-300 group"
               id={`problem-card-${prob.id}`}
             >
               <div className="space-y-3">
                 {/* Icon Wrapper */}
-                <div className="bg-sky-500/10 text-sky-400 p-3 rounded-xl border border-sky-500/20 w-max group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
+                <div className="bg-sky-50 text-sky-600 p-3 rounded-xl border border-sky-200 w-max group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
                   <IconComponent className="h-5 w-5" />
                 </div>
                 {/* Title */}
-                <h3 className="text-base font-bold text-white group-hover:text-sky-400 transition-colors duration-200">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors duration-200">
                   {prob.title}
                 </h3>
                 {/* Description */}
-                <p className="text-xs text-slate-400 leading-relaxed font-medium">
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">
                   {prob.description}
                 </p>
               </div>
 
               {/* Call Now CTA Button */}
-              <div className="pt-2 border-t border-slate-850/60">
+              <div className="pt-2 border-t border-slate-100">
                 <a 
-                  href="tel:13802270861"
-                  className="w-full bg-slate-950 hover:bg-sky-500 text-slate-300 hover:text-white font-bold py-3 px-4 rounded-xl text-xs transition-all duration-300 flex items-center justify-center space-x-2 border border-slate-800 hover:border-sky-500 active:scale-[0.98]"
+                  href={PHONE_TEL_HREF}
+                  className="w-full bg-white hover:bg-sky-500 text-slate-600 hover:text-white font-bold py-3 px-4 rounded-xl text-xs transition-all duration-300 flex items-center justify-center space-x-2 border border-slate-200 hover:border-sky-500 active:scale-[0.98]"
                 >
                   <Phone className="h-3.5 w-3.5 shrink-0" />
-                  <span>Call Now</span>
+                  <span>Call {PHONE_DISPLAY}</span>
                 </a>
               </div>
             </div>
@@ -201,33 +202,29 @@ export default function CommonProblems() {
 
       {/* Bottom Full-Width CTA Banner */}
       <div 
-        className="bg-gradient-to-r from-sky-950/40 via-slate-900 to-sky-950/20 border border-sky-900/30 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-xl mt-16 relative overflow-hidden"
+        className="bg-gradient-to-r from-sky-50 via-white to-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-sm mt-16"
         id="problems-cta-banner"
       >
-        {/* Decorative background glow elements matching existing design */}
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 h-36 w-36 bg-sky-500/10 rounded-full blur-2xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -ml-16 -mb-16 h-36 w-36 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
-
-        <div className="space-y-3 max-w-3xl text-center lg:text-left relative z-10">
-          <div className="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full text-[10px] text-emerald-400 font-bold font-mono uppercase tracking-wider">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="space-y-3 max-w-3xl text-center lg:text-left">
+          <div className="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full text-[10px] text-emerald-600 font-bold font-mono uppercase tracking-wider">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
             <span>24/7 Availability Guaranteed</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
             Need Fast AC Repair?
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
             Our licensed technicians are available 24/7 to diagnose and repair your air conditioning system with fast response times, upfront pricing, and reliable service across the United States.
           </p>
         </div>
 
-        <div className="shrink-0 w-full lg:w-auto relative z-10 flex justify-center lg:justify-end">
+        <div className="shrink-0 w-full lg:w-auto flex justify-center lg:justify-end">
           <a 
-            href="tel:13802270861" 
-            className="w-full sm:w-auto bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 px-10 rounded-2xl text-base shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 active:scale-95 transition-all flex items-center justify-center space-x-2 cursor-pointer"
+            href={PHONE_TEL_HREF} 
+            className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-10 rounded-2xl text-base shadow-sm hover:shadow-md active:scale-95 transition-all flex items-center justify-center space-x-2 cursor-pointer"
           >
-            <Phone className="h-5 w-5 animate-bounce" />
-            <span>Call Now</span>
+            <Phone className="h-5 w-5" />
+            <span>Call {PHONE_DISPLAY}</span>
           </a>
         </div>
       </div>

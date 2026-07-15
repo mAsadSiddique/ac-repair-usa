@@ -32,23 +32,6 @@ export interface StateData {
   cities: CityData[];
 }
 
-export interface Booking {
-  id: string;
-  customerName: string;
-  phone: string;
-  email: string;
-  state: string;
-  city: string;
-  zipCode: string;
-  serviceType: ServiceType;
-  urgency: "Standard" | "Urgent (24-48 Hours)" | "Emergency Same-Day";
-  additionalNotes?: string;
-  estimatedCost: number;
-  scheduledDate: string;
-  status: "Pending" | "Dispatched" | "In Progress" | "Completed";
-  trackingCode: string;
-}
-
 export interface Review {
   id: string;
   customerName: string;

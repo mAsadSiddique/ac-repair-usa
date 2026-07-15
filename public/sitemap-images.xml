@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://getacrepairusa.com/</loc>
+    <image:image>
+      <image:loc>https://getacrepairusa.com/og-cover.jpg</image:loc>
+      <image:title>getacrepair nationwide AC repair technician</image:title>
+      <image:caption>Licensed HVAC technician performing air conditioning repair</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://getacrepairusa.com/services</loc>
+    <image:image>
+      <image:loc>https://getacrepairusa.com/og-cover.jpg</image:loc>
+      <image:title>getacrepair AC services</image:title>
+    </image:image>
+  </url>
+</urlset>

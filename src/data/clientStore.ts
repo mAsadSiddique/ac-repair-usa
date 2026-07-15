@@ -15,10 +15,9 @@
  * feeling natural.
  */
 
-import { Booking, Review, ServiceType } from "../types";
+import { Review, ServiceType } from "../types";
 
-const REVIEWS_KEY = "aeronation_reviews_v1";
-const BOOKINGS_KEY = "aeronation_bookings_v1";
+const REVIEWS_KEY = "getacrepair_reviews_v1";
 
 // Seed reviews shown to every first-time visitor.
 const DEFAULT_REVIEWS: Review[] = [
@@ -133,92 +132,6 @@ export async function addReview(input: ReviewInput): Promise<Review> {
     window.localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews));
   }
   return newReview;
-}
-
-// --- BOOKINGS --------------------------------------------------------------
-
-function readBookingsSync(): Booking[] {
-  if (!isBrowser) return [];
-  return safeParse<Booking[]>(window.localStorage.getItem(BOOKINGS_KEY), []);
-}
-
-export async function getBookings(): Promise<Booking[]> {
-  await delay(200);
-  return readBookingsSync();
-}
-
-export interface BookingInput {
-  customerName: string;
-  phone: string;
-  email: string;
-  state: string;
-  city: string;
-  zipCode: string;
-  serviceType: ServiceType;
-  urgency: Booking["urgency"];
-  additionalNotes?: string;
-  // Optional pre-computed estimate from the wizard; falls back to base pricing.
-  estimatedCost?: number;
-}
-
-function baseCostFor(serviceType: ServiceType): number {
-  switch (serviceType) {
-    case ServiceType.AC_INSTALLATION:
-    case ServiceType.AC_REPLACEMENT:
-      return 4500;
-    case ServiceType.AC_MAINTENANCE:
-      return 120;
-    case ServiceType.THERMOSTAT_REPAIR:
-      return 220;
-    case ServiceType.REFRIGERANT_LEAK:
-      return 350;
-    case ServiceType.EMERGENCY_SERVICE:
-      return 250;
-    default:
-      return 150;
-  }
-}
-
-export async function createBooking(input: BookingInput): Promise<Booking> {
-  await delay(700);
-
-  let estimatedCost = input.estimatedCost;
-  if (typeof estimatedCost !== "number" || Number.isNaN(estimatedCost)) {
-    const base = baseCostFor(input.serviceType);
-    let multiplier = 1.0;
-    if (input.urgency === "Emergency Same-Day") multiplier = 1.35;
-    else if (input.urgency === "Urgent (24-48 Hours)") multiplier = 1.15;
-    estimatedCost = Math.round(base * multiplier);
-  }
-
-  const isEmergency = input.urgency === "Emergency Same-Day";
-  const scheduledDate = new Date(Date.now() + (isEmergency ? 0 : 2) * 24 * 60 * 60 * 1000)
-    .toISOString()
-    .split("T")[0];
-
-  const newBooking: Booking = {
-    id: randomId("b-"),
-    customerName: input.customerName,
-    phone: input.phone,
-    email: input.email,
-    state: input.state,
-    city: input.city,
-    zipCode: input.zipCode,
-    serviceType: input.serviceType,
-    urgency: input.urgency || "Standard",
-    additionalNotes: input.additionalNotes,
-    estimatedCost,
-    scheduledDate,
-    status: isEmergency ? "Dispatched" : "Pending",
-    trackingCode: "AC-" + Math.floor(100000 + Math.random() * 900000),
-  };
-
-  const bookings = readBookingsSync();
-  bookings.push(newBooking);
-  if (isBrowser) {
-    window.localStorage.setItem(BOOKINGS_KEY, JSON.stringify(bookings));
-  }
-  return newBooking;
 }
 
 // --- LOCALIZED CLIMATE ADVICE ---------------------------------------------

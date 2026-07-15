@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from "react";
 import { ServiceType, StateData, CityData } from "../types";
 import { STATES_DB, createDynamicCity, findStateByAbbrOrName } from "../data/states";
+import { PHONE_TEL_HREF, PHONE_DISPLAY } from "../data/phone";
 import { 
   Wind, Phone, MapPin, Search, ShieldCheck, Award, 
   Sparkles, Thermometer, ChevronRight, CheckCircle2, 
@@ -415,7 +416,7 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 py-6 animate-in fade-in duration-300" id="service-page-root">
       
       {/* Top Service Subnavigation Tabs */}
-      <div className="flex overflow-x-auto pb-3 gap-2 scrollbar-thin border-b border-slate-800" id="service-types-tabs">
+      <div className="flex overflow-x-auto pb-3 gap-2 scrollbar-thin border-b border-slate-200" id="service-types-tabs">
         {Object.values(ServiceType).map((type) => (
           <button
             key={type}
@@ -427,8 +428,8 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
             }}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer shrink-0 ${
               activeService === type
-                ? "bg-sky-500 text-white shadow-lg shadow-sky-500/25"
-                : "bg-slate-900 text-slate-400 hover:bg-slate-850 hover:text-white"
+                ? "bg-sky-600 text-white shadow-sm hover:shadow-md"
+                : "bg-white text-slate-600 border border-slate-200 hover:bg-sky-50/40 hover:text-slate-900"
             }`}
           >
             {type === ServiceType.THERMOSTAT_REPAIR ? "Smart Thermostats" : 
@@ -439,69 +440,71 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
       </div>
 
       {/* Main Service Content Banner */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-900/50 p-6 sm:p-8 rounded-3xl border border-slate-800" id="service-content-banner">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-gradient-to-br from-sky-50 via-white to-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm" id="service-content-banner">
         
         {/* Left Info */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-sky-500/10 border border-sky-500/20 px-3.5 py-1.5 rounded-full text-xs text-sky-400 font-bold font-mono">
+          <div className="inline-flex items-center space-x-2 bg-sky-50 border border-sky-200 px-3.5 py-1.5 rounded-full text-xs text-sky-600 font-bold font-mono">
             <Sparkles className="h-4 w-4" />
             <span>NATIONWIDE SERVICE PLATFORM</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
             {currentDetails.title}
           </h1>
 
-          <p className="text-slate-300 text-sm leading-relaxed">
+          <p className="text-slate-600 text-sm leading-relaxed">
             {currentDetails.description}
           </p>
 
           {/* Quick Metrics */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
-            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-850">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
               <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">National Dispatch</span>
-              <span className="text-sm font-bold text-emerald-400">24/7 Priority Active</span>
+              <span className="text-sm font-bold text-emerald-600">24/7 Priority Active</span>
             </div>
-            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-850">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
               <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">Average Duration</span>
-              <span className="text-sm font-bold text-sky-400">{currentDetails.avgDuration}</span>
+              <span className="text-sm font-bold text-sky-600">{currentDetails.avgDuration}</span>
             </div>
-            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-850 col-span-2 sm:col-span-1">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
               <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">Quality Guarantee</span>
-              <span className="text-xs font-bold text-slate-300">{currentDetails.guarantee}</span>
+              <span className="text-xs font-bold text-slate-600">{currentDetails.guarantee}</span>
             </div>
           </div>
 
           {/* Call CTA */}
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <a 
-              href="tel:13802270861"
-              className="bg-sky-500 hover:bg-sky-400 text-white font-bold py-3.5 px-8 rounded-xl text-sm transition-all shadow-lg shadow-sky-500/10 hover:shadow-sky-500/25 flex items-center justify-center space-x-2"
+              href={PHONE_TEL_HREF}
+              className="bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 px-8 rounded-xl text-sm transition-all shadow-sm hover:shadow-md flex items-center justify-center space-x-2"
             >
               <Phone className="h-4 w-4 animate-bounce" />
-              <span>Call Local Dispatch: 13802270861</span>
+              <span>Call Local Dispatch: {PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>
 
         {/* Right Image Frame */}
         <div className="lg:col-span-5 relative" id="service-image-container">
-          <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-2xl relative aspect-video lg:aspect-square">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm hover:shadow-md relative aspect-video lg:aspect-square">
             <img 
               src={currentDetails.image} 
-              alt={currentDetails.title}
+              alt={`${currentDetails.title} — getacrepair licensed HVAC service`}
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
               referrerPolicy="no-referrer"
             />
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+            {/* Light gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent pointer-events-none" />
             
             {/* Floating details */}
-            <div className="absolute bottom-4 left-4 right-4 bg-slate-950/90 border border-slate-850 p-3.5 rounded-xl flex items-center space-x-2.5">
-              <div className="bg-emerald-500/10 text-emerald-400 p-1.5 rounded-lg border border-emerald-500/20">
+            <div className="absolute bottom-4 left-4 right-4 bg-white/95 border border-slate-200 p-3.5 rounded-xl flex items-center space-x-2.5 shadow-sm">
+              <div className="bg-emerald-50 text-emerald-600 p-1.5 rounded-lg border border-emerald-200">
                 <ShieldCheck className="h-4 w-4" />
               </div>
-              <p className="text-[10px] text-slate-300 leading-normal font-mono uppercase font-bold tracking-wider">
+              <p className="text-[10px] text-slate-600 leading-normal font-mono uppercase font-bold tracking-wider">
                 EPA-Licensed, Insured, & Locally Dispatched
               </p>
             </div>
@@ -514,14 +517,14 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="service-details-grid">
         
         {/* Signs you need this */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
-          <h3 className="text-base font-bold text-white flex items-center space-x-2 border-b border-slate-850 pb-3">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm hover:shadow-md">
+          <h3 className="text-base font-bold text-slate-900 flex items-center space-x-2 border-b border-slate-100 pb-3">
             <ShieldAlert className="h-5 w-5 text-amber-500" />
             <span>Common Signs You Need {activeService}</span>
           </h3>
           <ul className="space-y-3 pt-1">
             {currentDetails.commonSigns.map((sign, idx) => (
-              <li key={idx} className="flex items-start space-x-3 text-xs text-slate-300 leading-relaxed">
+              <li key={idx} className="flex items-start space-x-3 text-xs text-slate-600 leading-relaxed">
                 <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
                 <span>{sign}</span>
               </li>
@@ -530,15 +533,15 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
         </div>
 
         {/* What's included */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
-          <h3 className="text-base font-bold text-white flex items-center space-x-2 border-b border-slate-850 pb-3">
-            <Wrench className="h-5 w-5 text-sky-400" />
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm hover:shadow-md">
+          <h3 className="text-base font-bold text-slate-900 flex items-center space-x-2 border-b border-slate-100 pb-3">
+            <Wrench className="h-5 w-5 text-sky-600" />
             <span>What's Included in Our Comprehensive Callout</span>
           </h3>
           <ul className="space-y-3 pt-1">
             {currentDetails.features.map((feat, idx) => (
-              <li key={idx} className="flex items-start space-x-3 text-xs text-slate-300 leading-relaxed">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+              <li key={idx} className="flex items-start space-x-3 text-xs text-slate-600 leading-relaxed">
+                <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>{idx + 1}. {feat}</span>
               </li>
             ))}
@@ -548,14 +551,14 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
       </div>
 
       {/* STATES & CITIES SELECTION SECTION */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8" id="localized-directory-service-box">
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 space-y-8 shadow-sm" id="localized-directory-service-box">
         
-        <div className="space-y-2 text-center md:text-left border-b border-slate-800 pb-5">
-          <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center md:justify-start space-x-2">
-            <MapPin className="h-6 w-6 text-sky-400" />
+        <div className="space-y-2 text-center md:text-left border-b border-slate-100 pb-5">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center justify-center md:justify-start space-x-2">
+            <MapPin className="h-6 w-6 text-sky-600" />
             <span>100% USA Coverage: Localized {activeService} Support</span>
           </h2>
-          <p className="text-xs text-slate-400 max-w-2xl leading-relaxed">
+          <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
             Select your state below. We cover every major metro and small rural city across the United States. Confirm your municipality for real-time coordinator dispatch availability.
           </p>
         </div>
@@ -564,9 +567,9 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           
           {/* State & City selectors */}
-          <div className="md:col-span-4 space-y-5 bg-slate-950 p-4 rounded-2xl border border-slate-850">
+          <div className="md:col-span-4 space-y-5 bg-sky-50/40 p-4 rounded-2xl border border-slate-200">
             <div>
-              <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono mb-2">
+              <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest font-mono mb-2">
                 1. Select State ({STATES_DB.length} Available)
               </label>
               <select
@@ -577,7 +580,7 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
                   setSearchCityQuery("");
                   setCustomCityError("");
                 }}
-                className="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-sky-500 font-medium"
+                className="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-sky-500 font-medium"
               >
                 {STATES_DB.map((s) => (
                   <option key={s.abbr} value={s.abbr}>
@@ -588,7 +591,7 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono mb-2">
+              <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest font-mono mb-2">
                 2. Select Pre-Defined City
               </label>
               <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto pr-1">
@@ -603,8 +606,8 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
                         onClick={() => handleQuickCitySelect(city)}
                         className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
                           isSel
-                            ? "bg-sky-500 text-white shadow-md shadow-sky-500/20"
-                            : "bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-white"
+                            ? "bg-sky-600 text-white shadow-sm"
+                            : "bg-white text-slate-600 border border-slate-200 hover:bg-sky-50/40 hover:text-slate-900"
                         }`}
                       >
                         {city.name}
@@ -614,8 +617,8 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
               </div>
             </div>
 
-            <div className="pt-2 border-t border-slate-850">
-              <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono mb-2">
+            <div className="pt-2 border-t border-slate-200">
+              <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest font-mono mb-2">
                 Or Search/Add ANY USA City
               </label>
               <form onSubmit={handleCitySearch} className="flex gap-2">
@@ -624,11 +627,11 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
                   placeholder="Type any city (e.g. Austin, Boise)..."
                   value={searchCityQuery}
                   onChange={(e) => setSearchCityQuery(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 rounded-xl py-2 px-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                  className="w-full bg-white border border-slate-200 rounded-xl py-2 px-3 text-xs text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
                 />
                 <button
                   type="submit"
-                  className="bg-sky-500 hover:bg-sky-400 text-white text-xs font-bold px-3 py-2 rounded-xl transition-all cursor-pointer whitespace-nowrap"
+                  className="bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold px-3 py-2 rounded-xl transition-all cursor-pointer whitespace-nowrap"
                 >
                   Confirm
                 </button>
@@ -639,21 +642,21 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
           {/* Localized output display */}
           <div className="md:col-span-8">
             {activeCity ? (
-              <div className="bg-slate-950 p-6 rounded-3xl border border-slate-850 space-y-6 relative overflow-hidden animate-in zoom-in-95 duration-200">
+              <div className="bg-gradient-to-br from-sky-50 via-white to-slate-50 p-6 rounded-3xl border border-slate-200 space-y-6 relative overflow-hidden animate-in zoom-in-95 duration-200 shadow-sm">
                 
                 {/* Visual state backdrop decoration */}
-                <div className="absolute top-0 right-0 p-4 font-black text-6xl text-slate-900 select-none uppercase font-mono pointer-events-none">
+                <div className="absolute top-0 right-0 p-4 font-black text-6xl text-slate-100 select-none uppercase font-mono pointer-events-none">
                   {selectedStateAbbr}
                 </div>
 
                 <div className="flex items-center space-x-3 relative z-10">
-                  <div className="bg-sky-500/10 text-sky-400 p-2.5 rounded-xl border border-sky-500/20">
+                  <div className="bg-sky-50 text-sky-600 p-2.5 rounded-xl border border-sky-200">
                     <Thermometer className="h-5 w-5 animate-pulse" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-white flex items-center space-x-2">
+                    <h4 className="text-lg font-bold text-slate-900 flex items-center space-x-2">
                       <span>{activeCity.name}, {selectedStateAbbr}</span>
-                      <span className="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-mono font-bold">
+                      <span className="text-xs bg-emerald-50 text-emerald-600 border border-emerald-200 px-2 py-0.5 rounded font-mono font-bold">
                         Coordinator Active
                       </span>
                     </h4>
@@ -664,19 +667,19 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 relative z-10">
-                  <div className="bg-slate-900 p-4 rounded-xl border border-slate-850/50 space-y-1">
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1 shadow-sm">
                     <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">Local Coordinator Status</span>
-                    <p className="text-lg font-bold text-emerald-400">
+                    <p className="text-lg font-bold text-emerald-600">
                       ON-CALL ACTIVE
                     </p>
-                    <p className="text-[10px] text-slate-400 leading-normal">
-                      Regional coordinator assigned for immediate response in <span className="font-bold text-sky-400">{activeCity.name}</span>.
+                    <p className="text-[10px] text-slate-500 leading-normal">
+                      Regional coordinator assigned for immediate response in <span className="font-bold text-sky-600">{activeCity.name}</span>.
                     </p>
                   </div>
 
-                  <div className="bg-slate-900 p-4 rounded-xl border border-slate-850/50 space-y-1">
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-1 shadow-sm">
                     <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">Dispatch Response Time</span>
-                    <p className="text-lg font-bold text-sky-400">Under 2 Hours</p>
+                    <p className="text-lg font-bold text-sky-600">Under 2 Hours</p>
                     <p className="text-[10px] text-slate-500 leading-normal">
                       Local crew stationed nearest to {activeCity.name} for rapid transit.
                     </p>
@@ -685,32 +688,32 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
 
                 <div className="space-y-2 relative z-10">
                   <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono block">Regional Diagnostic Alert</span>
-                  <p className="text-xs text-slate-300 leading-relaxed bg-slate-900 p-3.5 rounded-xl border border-slate-850/40">
-                    <span className="font-bold text-amber-400">Common local HVAC issue in {activeCity.name}:</span> {activeCity.commonIssue}. Our teams carry specialized replacement components to solve this issue instantly.
+                  <p className="text-xs text-slate-600 leading-relaxed bg-white p-3.5 rounded-xl border border-slate-200">
+                    <span className="font-bold text-amber-600">Common local HVAC issue in {activeCity.name}:</span> {activeCity.commonIssue}. Our teams carry specialized replacement components to solve this issue instantly.
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 relative z-10">
+                <div className="pt-2 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 relative z-10">
                   <p className="text-[10px] text-slate-500 text-center sm:text-left leading-normal">
-                    Ready to book? Our dispatch operators are standing by to lock in your preferred coordinator time.
+                    Need service now? Call our dispatch line — operators are standing by to connect you with a local coordinator.
                   </p>
                   <a 
-                    href="tel:13802270861"
-                    className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-6 py-3 rounded-xl text-xs transition-all shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 text-center flex items-center justify-center space-x-1.5"
+                    href={PHONE_TEL_HREF}
+                    className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-black px-6 py-3 rounded-xl text-xs transition-all shadow-sm hover:shadow-md text-center flex items-center justify-center space-x-1.5"
                   >
                     <Phone className="h-3.5 w-3.5 shrink-0" />
-                    <span>Call Now: 13802270861</span>
+                    <span>Call Now: {PHONE_DISPLAY}</span>
                   </a>
                 </div>
 
               </div>
             ) : (
-              <div className="bg-slate-950 p-8 rounded-3xl border border-slate-850 flex flex-col items-center justify-center text-center space-y-4 py-16">
-                <div className="bg-slate-900 text-slate-500 p-3 rounded-2xl border border-slate-800">
+              <div className="bg-sky-50/40 p-8 rounded-3xl border border-slate-200 flex flex-col items-center justify-center text-center space-y-4 py-16">
+                <div className="bg-white text-slate-500 p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <HelpCircle className="h-6 w-6" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-bold text-slate-300">No Location Selected</h4>
+                  <h4 className="text-sm font-bold text-slate-900">No Location Selected</h4>
                   <p className="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
                     Select a state on the left and choose a city (or search any custom US city) to instantly retrieve localized HVAC technician availability and dispatch status.
                   </p>
@@ -722,26 +725,26 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
         </div>
 
         {/* State SEO tip banner */}
-        <div className="bg-slate-950/40 border border-slate-850 p-4 rounded-2xl flex items-start space-x-3 text-xs leading-relaxed text-slate-400">
-          <Award className="h-5 w-5 text-sky-400 shrink-0 mt-0.5" />
+        <div className="bg-sky-50/40 border border-slate-200 p-4 rounded-2xl flex items-start space-x-3 text-xs leading-relaxed text-slate-600">
+          <Award className="h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
           <div>
-            <span className="font-bold text-slate-300">{activeState.name} HVAC Pro Tip:</span> {activeState.seoTip}
+            <span className="font-bold text-slate-900">{activeState.name} HVAC Pro Tip:</span> {activeState.seoTip}
           </div>
         </div>
 
       </div>
 
       {/* Dynamic SEO FAQ Section with JSON-LD Schema */}
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 space-y-8 animate-in fade-in duration-300" id="service-faq-section">
-        <div className="space-y-2 text-center md:text-left border-b border-slate-800 pb-5">
-          <div className="inline-flex items-center space-x-2 bg-sky-500/10 border border-sky-500/20 px-3 py-1.5 rounded-full text-xs text-sky-400 font-bold font-mono">
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 space-y-8 animate-in fade-in duration-300 shadow-sm" id="service-faq-section">
+        <div className="space-y-2 text-center md:text-left border-b border-slate-100 pb-5">
+          <div className="inline-flex items-center space-x-2 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-full text-xs text-sky-600 font-bold font-mono">
             <HelpCircle className="h-4 w-4 shrink-0" />
             <span>EXPERT HVAC RESOLUTION CENTER</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center md:justify-start space-x-2">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center justify-center md:justify-start space-x-2">
             <span>Frequently Asked Questions regarding {activeService}</span>
           </h2>
-          <p className="text-xs text-slate-400 max-w-2xl leading-relaxed">
+          <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
             Get technical insights directly from our EPA-certified cooling technicians. Learn about symptoms, diagnostic workflows, average replacement cycles, and local service support.
           </p>
         </div>
@@ -752,22 +755,22 @@ export default function ServicePage({ activeService, onSelectService }: ServiceP
             return (
               <div 
                 key={idx} 
-                className={`bg-slate-950 border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-sky-500/40 shadow-lg shadow-sky-500/5' : 'border-slate-850'}`}
+                className={`bg-white border rounded-2xl overflow-hidden transition-all duration-300 shadow-sm ${isOpen ? 'border-sky-300 shadow-md' : 'border-slate-200'}`}
                 id={`faq-item-${idx}`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-5 flex items-center justify-between text-xs sm:text-sm font-bold text-white hover:text-sky-400 transition-colors cursor-pointer select-none"
+                  className="w-full text-left p-5 flex items-center justify-between text-xs sm:text-sm font-bold text-slate-900 hover:text-sky-600 transition-colors cursor-pointer select-none"
                   aria-expanded={isOpen}
                 >
                   <span className="pr-4">{faq.question}</span>
-                  <span className={`text-slate-500 transition-transform duration-300 transform ${isOpen ? "rotate-180 text-sky-400" : ""}`}>
+                  <span className={`text-slate-500 transition-transform duration-300 transform ${isOpen ? "rotate-180 text-sky-600" : ""}`}>
                     ▼
                   </span>
                 </button>
                 {isOpen && (
-                  <div className="p-5 pt-0 text-xs text-slate-300 leading-relaxed border-t border-slate-900/60 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="p-5 pt-0 text-xs text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in slide-in-from-top-2 duration-200">
                     {faq.answer}
                   </div>
                 )}
