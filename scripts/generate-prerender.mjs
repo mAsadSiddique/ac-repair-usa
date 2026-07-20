@@ -2,44 +2,26 @@
  * Generates crawler-friendly static HTML for every sitemap URL after Vite build.
  * Each file includes unique title/description, JSON-LD stubs, visible content,
  * and boots the same SPA bundle so UX stays identical.
+ *
+ * Data comes from the shared scripts/lib/cityData.mjs module (real cities
+ * dataset), the same source used by generate-sitemap.mjs, so prerendered
+ * routes always match the sitemap exactly. Only "major" cities get the extra
+ * per-service pages; every real city/town still gets its AC-repair landing.
  */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { loadStates, SERVICE_SLUGS as EXTRA_SERVICE_SLUGS, SERVICE_LABELS, slugify } from "./lib/cityData.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const distDir = path.join(root, "dist");
-const statesPath = path.join(root, "src/data/states.ts");
-const seoContentPath = path.join(root, "src/data/seoContent.ts");
 
 const SITE = "https://getacrepairusa.com";
 const PHONE_DISPLAY = "+1 (866) 330-1137";
 const PHONE_TEL = "tel:+18663301137";
-const SERVICE_SLUGS = [
-  "ac-repair",
-  "ac-service",
-  "ac-installation",
-  "hvac-repair",
-  "hvac-installation",
-  "heating-repair",
-];
-
-const SERVICE_LABELS = {
-  "ac-repair": "AC Repair",
-  "ac-service": "AC Service",
-  "ac-installation": "AC Installation",
-  "hvac-repair": "HVAC Repair",
-  "hvac-installation": "HVAC Installation",
-  "heating-repair": "Heating Repair",
-};
-
-function slugify(text) {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
+// Full slug list for landing + extra services, used when rendering a major city's cross-links.
+const SERVICE_SLUGS = ["ac-repair", ...EXTRA_SERVICE_SLUGS];
 
 function escapeHtml(s) {
   return String(s)
@@ -47,32 +29,6 @@ function escapeHtml(s) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
-}
-
-function parseStates() {
-  const source = fs.readFileSync(statesPath, "utf8");
-  const states = [];
-  const stateBlocks = source.split(/\n  \{\n    name: "/).slice(1);
-  for (const block of stateBlocks) {
-    const stateName = block.match(/^([^"]+)"/)?.[1];
-    const abbr = block.match(/abbr: "([A-Z]{2})"/)?.[1];
-    const climateZone = block.match(/climateZone: "([^"]+)"/)?.[1] || "US climate";
-    const avgTemp = block.match(/avgTemp: "([^"]+)"/)?.[1] || "";
-    const seoTip = block.match(/seoTip: "([^"]+)"/)?.[1] || "";
-    if (!stateName || !abbr) continue;
-    const citiesSection = block.split(/cities:\s*\[/)[1]?.split(/\n    \]/)[0] || "";
-    const cities = [...citiesSection.matchAll(/\{ name: "([^"]+)", isMajor: (true|false), climateProfile: "([^"]+)", commonIssue: "([^"]+)", avgSummerTemp: "([^"]+)"/g)].map(
-      (m) => ({
-        name: m[1],
-        isMajor: m[2] === "true",
-        climateProfile: m[3],
-        commonIssue: m[4],
-        avgSummerTemp: m[5],
-      })
-    );
-    states.push({ name: stateName, abbr, climateZone, avgTemp, seoTip, cities });
-  }
-  return states;
 }
 
 function extractAssetTags(indexHtml) {
@@ -182,7 +138,7 @@ function main() {
   const applyAssets = (html) =>
     html.replace("__ASSET_CSS__", cssTags).replace("__ASSET_JS__", jsTags);
 
-  const states = parseStates();
+  const states = loadStates();
   let written = 0;
 
   const staticPages = [
@@ -287,7 +243,12 @@ function main() {
 
     for (const city of state.cities) {
       const citySlug = slugify(city.name);
-      for (const service of SERVICE_SLUGS) {
+      // Every real city/town gets its AC-repair landing page; only "major"
+      // cities (population threshold baked into the dataset) get the extra
+      // 8 dedicated service pages — matches generate-sitemap.mjs exactly.
+      const slugsForCity = city.isMajor ? SERVICE_SLUGS : ["ac-repair"];
+
+      for (const service of slugsForCity) {
         const pathUrl = service === "ac-repair" ? `/${stateSlug}/${citySlug}` : `/${stateSlug}/${citySlug}/${service}`;
         const label = SERVICE_LABELS[service];
         const title = `${label} in ${city.name}, ${state.abbr} | getacrepair`;
@@ -311,7 +272,8 @@ function main() {
               { label: city.name, href: `/${stateSlug}/${citySlug}` },
               { label },
             ],
-            links: SERVICE_SLUGS.filter((s) => s !== service)
+            links: slugsForCity
+              .filter((s) => s !== service)
               .slice(0, 5)
               .map((s) => ({
                 href: s === "ac-repair" ? `/${stateSlug}/${citySlug}` : `/${stateSlug}/${citySlug}/${s}`,
@@ -320,6 +282,7 @@ function main() {
           })
         );
         if (writeRoute(pathUrl, html)) written++;
+        if (written % 5000 === 0) console.log(`  ...${written} pages written so far`);
       }
     }
   }

@@ -351,7 +351,7 @@ export default function StateDirectory({
             <span>BACK TO {activeState.name.toUpperCase()} CITIES DIRECTORY</span>
           </button>
 
-          {/* Segmented Tab Control for all 6 HVAC Services */}
+          {/* Segmented Tab Control for all 9 HVAC Services */}
           <div className="flex overflow-x-auto pb-3 gap-2 scrollbar-thin border-b border-slate-200" id="city-service-tabs">
             {[
               { key: "ac-repair", label: "AC Repair" },
@@ -359,7 +359,10 @@ export default function StateDirectory({
               { key: "ac-installation", label: "AC Installation" },
               { key: "hvac-repair", label: "HVAC Repair" },
               { key: "hvac-installation", label: "HVAC Installation" },
-              { key: "heating-repair", label: "Heating Repair" }
+              { key: "heating-repair", label: "Heating Repair" },
+              { key: "furnace-repair", label: "Furnace Repair" },
+              { key: "emergency-ac-repair", label: "Emergency AC" },
+              { key: "thermostat-repair", label: "Thermostat Repair" }
             ].map((srv) => (
               <button
                 key={srv.key}

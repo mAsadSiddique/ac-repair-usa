@@ -987,5 +987,286 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
     ],
     ctaTitle: "Lock In Your Emergency Heating Repair Today!",
     ctaDesc: "Don't freeze in a cold home. Contact our licensed heating mechanics for safe, upfront, and guaranteed furnace and heat pump repairs in {city}."
+  },
+  "furnace-repair": {
+    serviceName: "Furnace Repair",
+    heroTitle: "Licensed Furnace Repair in {city}, {state}",
+    heroDesc: "A failing gas furnace is more than an inconvenience—it's a safety concern. getacrepair dispatches EPA-certified furnace technicians in {city}, {state} to diagnose ignition faults, combustion issues, and control board failures fast, with transparent flat-rate pricing on every visit.",
+    aboutParagraphs: [
+      "Your furnace is the single most safety-critical appliance in your home. It burns fuel under controlled combustion, channels the exhaust through a sealed heat exchanger, and relies on a chain of safety switches to shut itself down the instant something goes wrong. In {city}, where furnaces run for months at a stretch through the cold season, that chain of switches and igniters takes on real wear—and a single failed part can leave your household without heat on the coldest night of the year.",
+      "Our technicians approach every furnace repair call in {city} with a structured, safety-first diagnostic process. We start by checking your thermostat call for heat, verify the igniter or pilot assembly is producing a strong, consistent spark or flame, and confirm the flame sensor is reading current correctly. From there we test the draft inducer motor, inspect the burner assembly for proper flame color and shape, and verify gas manifold pressure against manufacturer specifications.",
+      "Ignition failures are the most common reason a furnace won't fire. Hot surface igniters are fragile ceramic elements that degrade with every heating cycle and eventually crack or lose resistance. Flame sensors accumulate a thin layer of carbon that prevents them from detecting a healthy flame, causing the control board to shut the gas valve as a safety precaution after a few failed ignition attempts. We carry OEM-equivalent igniters, flame sensors, and hot surface elements for the most common residential furnace platforms, so most ignition failures are resolved same-visit.",
+      "Beyond ignition, we diagnose blower motor failures, cracked or fatigued heat exchangers, failed draft inducer motors, and control board faults that trigger cryptic blinking error codes. A cracked heat exchanger is treated as an immediate safety shutdown—it can allow combustion byproducts, including carbon monoxide, into your supply air—and we always confirm with a visual camera inspection before recommending replacement.",
+      "Every furnace repair completed in {city} is verified with a full combustion test: we measure temperature rise across the heat exchanger, confirm safe carbon monoxide readings at the flue, and cycle the system through a complete heating call to confirm stable ignition and shutdown. We back every repair with our 1-year parts and workmanship warranty."
+    ],
+    problems: [
+      {
+        title: "Furnace Won't Ignite",
+        desc: "The blower runs but the burners never light, or the system tries to ignite several times before locking out. This is almost always a failed igniter, a dirty flame sensor, or a closed gas valve.",
+        icon: "Thermometer"
+      },
+      {
+        title: "Blinking Error Code on Control Board",
+        desc: "Modern furnaces flash a numeric or colored LED code when a safety switch trips. Decoding this code correctly is the fastest way to a same-visit repair, and it requires manufacturer-specific documentation.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Furnace Short-Cycles or Runs Constantly",
+        desc: "Rapid on/off cycling points to a restricted air filter, an oversized furnace, or a failing limit switch. Constant running without reaching set temperature usually indicates a weak burner flame or thermostat miscalibration.",
+        icon: "ShieldAlert"
+      },
+      {
+        title: "Loud Bangs, Rattles, or Burning Smells",
+        desc: "A loud boom on startup ('delayed ignition') means gas is accumulating before lighting—shut the system down and call immediately. Rattling points to a loose blower wheel; burning smells indicate an overheating motor.",
+        icon: "Wind"
+      }
+    ],
+    benefits: [
+      {
+        title: "Same-Visit Ignition Repairs",
+        desc: "Our trucks stock the igniters, flame sensors, and control boards for the most common residential furnace brands, so most ignition failures are fixed on the first visit."
+      },
+      {
+        title: "Mandatory Carbon Monoxide Safety Check",
+        desc: "Every furnace repair concludes with a combustion and CO safety test, giving you documented proof your heat exchanger and venting are operating safely."
+      },
+      {
+        title: "Upfront, Flat-Rate Pricing",
+        desc: "We diagnose first and quote a fixed price before any repair begins—no hourly surprises, no upsell pressure."
+      },
+      {
+        title: "1-Year Workmanship Warranty",
+        desc: "Every part and every hour of labor on your furnace repair is protected for a full year against premature failure."
+      }
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Priority Dispatch",
+        desc: "Your call is logged and routed to the nearest on-call furnace technician serving {city}, with symptoms noted in advance."
+      },
+      {
+        step: "02",
+        title: "Ignition & Safety Diagnostic",
+        desc: "We test the igniter, flame sensor, gas valve, and every safety switch in the ignition sequence to isolate the exact fault."
+      },
+      {
+        step: "03",
+        title: "Flat-Rate Repair Quote",
+        desc: "You receive an exact price for parts and labor before we touch your furnace—no verbal estimates, no surprises."
+      },
+      {
+        step: "04",
+        title: "Certified Repair",
+        desc: "We install OEM-equivalent replacement parts and re-seal any combustion or venting components we access."
+      },
+      {
+        step: "05",
+        title: "Combustion Safety Verification",
+        desc: "We run a full heating cycle, measuring flue temperature and carbon monoxide levels to confirm a safe, complete repair."
+      }
+    ],
+    emergencyTitle: "Furnace Down on a Freezing Night in {city}?",
+    emergencyDesc: "A dead furnace during a hard freeze isn't just uncomfortable—frozen pipes and dangerously cold indoor temperatures are real risks. Our on-call furnace technicians are dispatched 24/7/365 across {city} for no-heat emergencies.",
+    whyChooseUs: [
+      { title: "Licensed Technicians", desc: "Every furnace repair is performed by a licensed, background-checked HVAC technician." },
+      { title: "Same-Day Service", desc: "No-heat calls are treated as priority dispatch, with most visits completed same-day." },
+      { title: "Upfront Pricing", desc: "You approve an exact flat-rate quote before any repair work begins." },
+      { title: "Warranty Protection", desc: "All furnace repairs carry our 1-year parts and workmanship warranty." },
+      { title: "Safety-First Diagnostics", desc: "Every visit includes a carbon monoxide and combustion safety check, not just a functional test." },
+      { title: "24/7 Availability", desc: "No-heat emergencies don't wait for business hours, and neither do we." }
+    ],
+    brands: ["Carrier", "Trane", "Lennox", "Rheem", "Goodman", "York", "Bryant", "Amana", "Rheem"],
+    faqs: [
+      { question: "Why won't my furnace in {city} light even though the blower is running?", answer: "This is almost always an ignition-sequence failure: a cracked hot surface igniter, a carbon-coated flame sensor, or a closed manual gas valve. The blower can run independently of the burner ignition sequence, so airflow alone doesn't confirm the burners are working." },
+      { question: "What does a blinking light on my furnace's control board mean?", answer: "Most modern furnaces flash a numeric or color-coded LED sequence tied to a specific fault—low flame sense, pressure switch failure, limit switch trip, and more. The exact meaning varies by brand and model, which is why our technicians carry manufacturer fault-code references for the major furnace brands." },
+      { question: "Is it safe to keep running my furnace if I smell a faint burning odor?", answer: "A faint 'dust burning off' smell during the first run of the season is normal. A persistent or strong burning, electrical, or plastic smell is not—shut the system down at the thermostat and breaker and call for inspection, as it can indicate an overheating blower motor or a wiring fault." },
+      { question: "How often should a furnace be professionally serviced?", answer: "We recommend annual service in early fall, before the heating season starts. This is also when we perform the combustion and carbon monoxide safety checks that most manufacturer warranties require to stay valid." },
+      { question: "Can a dirty air filter really cause a full furnace shutdown?", answer: "Yes. A severely clogged filter restricts return airflow, causing heat to build up inside the furnace cabinet. Once internal temperature exceeds a safe threshold, the high-limit switch trips and shuts off the burners as a protective measure, even though the system is otherwise healthy." },
+      { question: "What is the average lifespan of a residential gas furnace?", answer: "A well-maintained gas furnace typically lasts 15 to 20 years. Past that age, frequent repairs and declining efficiency usually make replacement more cost-effective than continued repair." },
+      { question: "Do you provide emergency furnace repair in {city} on weekends?", answer: "Yes. Our on-call dispatch operates 24 hours a day, 7 days a week, including holidays, specifically for no-heat emergencies." },
+      { question: "How do you check for a cracked heat exchanger?", answer: "We use a borescope camera to visually inspect the heat exchanger's internal surfaces for hairline cracks or corrosion, combined with a combustion analyzer to check for elevated carbon monoxide in the supply airstream—both are required before we sign off on a furnace as safe to operate." }
+    ],
+    reviews: [
+      { author: "Patricia N.", text: "Furnace quit on the coldest night of the year. Technician found a cracked igniter within 20 minutes and had heat back on before midnight. Extremely grateful.", rating: 5 },
+      { author: "Mark D.", text: "They walked me through the carbon monoxide test results on their gauge before and after the repair. That kind of transparency is rare and appreciated.", rating: 5 },
+      { author: "Diane K.", text: "Fixed a blinking error code that two other companies couldn't diagnose. Turned out to be a pressure switch. Fast, fair, and professional.", rating: 5 }
+    ],
+    ctaTitle: "Get Your Furnace Fixed Today!",
+    ctaDesc: "Don't wait out a cold snap with a broken furnace. Call now for fast, safety-verified furnace repair in {city}."
+  },
+  "emergency-ac-repair": {
+    serviceName: "Emergency AC Repair",
+    heroTitle: "24/7 Emergency AC Repair in {city}, {state}",
+    heroDesc: "Complete AC failure during a heat wave in {city}, {state} demands an immediate response. getacrepair's emergency dispatch network puts a licensed technician at your door in as little as 2 hours, any hour, any day, with fully-stocked trucks ready to restore cooling on the first visit.",
+    aboutParagraphs: [
+      "Not every AC problem can wait until tomorrow. When outdoor temperatures climb past 90°F and your cooling system dies completely, indoor conditions can become genuinely dangerous within hours—especially for infants, seniors, and anyone with a medical condition sensitive to heat. In {city}, our emergency dispatch network exists specifically for these moments: a dedicated on-call rotation of technicians who prioritize total-failure calls above routine scheduling.",
+      "Emergency dispatch works differently from a standard appointment. The moment your call comes in, our dispatcher classifies the severity based on your household's specific risk factors and current indoor temperature, then routes the request to the nearest available on-call technician—not the next open slot on a calendar. In most of the areas we serve in {city}, that means a technician arrives within 2 hours of your call, day or night.",
+      "Because emergency calls skew toward catastrophic failures, our emergency trucks carry a deeper parts inventory than a standard service vehicle: multiple sizes of dual-run capacitors, universal contactors, common compressor-saver hard start kits, condenser fan motors, and a full nitrogen and refrigerant recovery setup for on-the-spot leak repairs. This lets us resolve the overwhelming majority of emergency calls in a single visit, rather than diagnosing today and returning tomorrow with parts.",
+      "We also understand that a true emergency isn't only about broken equipment—it's about the people inside the home. If a technician determines your system can't be safely restored same-visit (for example, a compressor that has gone into hard lock and needs replacement), we provide immediate guidance on temporary cooling measures and prioritize your household for next-available installation scheduling rather than leaving you to figure it out alone.",
+      "Emergency service in {city} carries transparent, flat-rate emergency pricing that we quote before any work begins—there is no ambiguity about after-hours rates. Every emergency repair is backed by the same 1-year parts and workmanship warranty as our standard daytime service."
+    ],
+    problems: [
+      {
+        title: "Complete System Shutdown in Extreme Heat",
+        desc: "No airflow, no cooling, nothing running at all. This is treated as our highest emergency-dispatch priority, especially with vulnerable residents in the home.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Electrical Burning Smell from Vents or Outdoor Unit",
+        desc: "A burning electrical odor indicates an overheating motor or melting wire insulation—a genuine fire risk that requires immediate shutdown at the breaker and same-hour dispatch.",
+        icon: "ShieldAlert"
+      },
+      {
+        title: "Water Actively Flooding Into Living Space",
+        desc: "A severely backed-up condensate line or frozen coil that has thawed rapidly can flood ceilings and walls in minutes, requiring urgent mitigation.",
+        icon: "Wind"
+      },
+      {
+        title: "Compressor Locked Rotor / Loud Humming, No Start",
+        desc: "A compressor that hums but won't start is at serious risk of thermal overload burnout if power isn't cut immediately and diagnosed same-day.",
+        icon: "Thermometer"
+      }
+    ],
+    benefits: [
+      {
+        title: "2-Hour Priority Response",
+        desc: "Emergency calls jump the queue. In most service areas around {city}, a technician is on-site within 2 hours of your call."
+      },
+      {
+        title: "True 24/7/365 Coverage",
+        desc: "Nights, weekends, and holidays are staffed identically to weekday business hours—no emergency surcharge surprises, no automated voicemail."
+      },
+      {
+        title: "Deep On-Truck Parts Inventory",
+        desc: "Emergency trucks carry extra capacitors, contactors, motors, and recovery equipment specifically to maximize same-visit resolution."
+      },
+      {
+        title: "Transparent Emergency-Rate Pricing",
+        desc: "You'll know the exact emergency-service price before we begin—quoted upfront, never estimated after the fact."
+      }
+    ],
+    process: [
+      { step: "01", title: "Emergency Triage Call", desc: "Our dispatcher assesses severity and household risk factors immediately upon your call, and prioritizes accordingly." },
+      { step: "02", title: "Rapid Technician Dispatch", desc: "The nearest on-call technician is routed directly to your address, typically arriving within 2 hours in {city}." },
+      { step: "03", title: "Immediate Safety Shutdown Check", desc: "We first confirm there's no active electrical or water hazard before beginning full diagnostics." },
+      { step: "04", title: "On-Site Emergency Repair", desc: "Using our expanded parts inventory, we resolve the failure on-site in the large majority of emergency calls." },
+      { step: "05", title: "Verified Cooling Restoration", desc: "We confirm stable compressor cycling and a healthy temperature drop before we consider the emergency closed." }
+    ],
+    emergencyTitle: "AC Completely Dead Right Now in {city}?",
+    emergencyDesc: "If your air conditioning has failed entirely during dangerous heat, don't wait. Call now—our emergency dispatchers are standing by around the clock to get a technician moving toward your home immediately.",
+    whyChooseUs: [
+      { title: "Licensed Technicians", desc: "Every emergency technician holds the same licensing, background checks, and EPA certification as our standard service team." },
+      { title: "2-Hour Response Target", desc: "Emergency calls are dispatched to the closest available on-call technician, not the next calendar slot." },
+      { title: "Upfront Emergency Pricing", desc: "Flat-rate emergency pricing is quoted and approved before any repair begins." },
+      { title: "Warranty Protection", desc: "Emergency repairs carry the same 1-year workmanship warranty as scheduled service." },
+      { title: "Deep Parts Inventory", desc: "Our emergency trucks are stocked for same-visit resolution of the most common catastrophic failures." },
+      { title: "24/7/365 Coverage", desc: "Every hour of every day, including holidays, is staffed at full readiness." }
+    ],
+    brands: ["Carrier", "Trane", "Lennox", "Rheem", "Goodman", "York", "Bryant", "Amana", "Ruud"],
+    faqs: [
+      { question: "How fast can an emergency technician reach me in {city}?", answer: "Most emergency calls in our {city} service area are met with an on-site technician within 2 hours. Response time can vary slightly based on your exact location and current emergency call volume, but emergency dispatch always takes priority over routine scheduling." },
+      { question: "What actually qualifies as an AC emergency?", answer: "A complete system failure during high heat (especially with infants, elderly, or medically vulnerable residents present), any burning electrical smell, active water flooding into living space, or a compressor that hums but won't start all qualify as same-day emergency priority." },
+      { question: "Will I pay extra for after-hours or weekend emergency service?", answer: "Emergency service carries a transparent, flat emergency-rate that is always quoted upfront before work begins—there are no hidden after-hours multipliers added after the fact." },
+      { question: "What should I do while waiting for the emergency technician?", answer: "If you smell burning or see sparking, shut the system off at the breaker immediately and do not attempt to restart it. If the coil is visibly frozen, switch off cooling but leave the fan running to help it thaw safely before the technician arrives." },
+      { question: "Can you actually fix most emergencies in a single visit?", answer: "Yes, in the large majority of cases. Our emergency trucks carry an expanded parts inventory specifically so that failures like blown capacitors, failed contactors, and refrigerant leaks can be resolved on the same visit rather than requiring a follow-up appointment." },
+      { question: "What happens if my system needs a part you don't have on the truck?", answer: "We'll stabilize the situation as best as safely possible, advise on temporary cooling measures, and prioritize you for next-available follow-up dispatch as soon as the part is sourced—typically within 24 hours." },
+      { question: "Is emergency dispatch available on major holidays?", answer: "Yes. Our emergency rotation runs 24 hours a day, 7 days a week, 365 days a year, including all major holidays." },
+      { question: "Do you serve rural areas outside the main part of {city}, or just downtown?", answer: "Our emergency dispatch covers the full metro and surrounding communities around {city}, not just the city center. Response times may run slightly longer for outlying areas, but coverage is not limited to downtown." }
+    ],
+    reviews: [
+      { author: "Angela F.", text: "Called at 11pm when our AC died completely with a newborn in the house. A technician was there in under 90 minutes and had it running again by midnight. Can't thank them enough.", rating: 5 },
+      { author: "Brian T.", text: "Compressor locked up on a Sunday during a heat advisory. They still came out same-day, no ridiculous emergency markup, fixed it in one visit.", rating: 5 },
+      { author: "Nicole W.", text: "We smelled something burning near the outdoor unit and panicked. They had someone out within the hour, found a melted wire, and fixed it safely on the spot.", rating: 5 }
+    ],
+    ctaTitle: "Get Emergency AC Help Right Now!",
+    ctaDesc: "Don't wait out a dangerous heat wave with no cooling. Call now for 24/7 emergency AC repair dispatch in {city}."
+  },
+  "thermostat-repair": {
+    serviceName: "Thermostat Repair",
+    heroTitle: "Thermostat Repair & Smart Upgrades in {city}, {state}",
+    heroDesc: "A blank, unresponsive, or miscalibrated thermostat can make a perfectly healthy AC or furnace seem broken. getacrepair diagnoses and repairs wiring, sensor, and control faults in {city}, {state}, and installs modern Wi-Fi smart thermostats built for real energy savings.",
+    aboutParagraphs: [
+      "Your thermostat is the command center for your entire HVAC system, yet it's often the last place people look when something seems wrong. A system that won't turn on, cycles erratically, or can't maintain a set temperature is frequently traced back to the thermostat itself rather than the furnace or air conditioner—dead batteries, a miscalibrated sensor, loose low-voltage wiring, or a missing common wire can all mimic a much larger, more expensive mechanical failure.",
+      "In {city}, our technicians start every thermostat call with a full low-voltage diagnostic: verifying 24V power is present at the thermostat, checking continuity on each control wire (R, C, W, Y, G), and confirming the thermostat is correctly configured for your specific system type—conventional forced air, heat pump, or dual-fuel. Many miscalibration issues stem from a thermostat placed near a heat register, direct sunlight, or a drafty exterior wall, which throws off its temperature reading independent of any electrical fault.",
+      "One of the most common issues we resolve is a missing or improperly wired common wire (C-wire), which is required to provide continuous power to modern smart and touchscreen thermostats. Many homes built before smart thermostats became standard only ran the minimum wires needed for basic heating and cooling, leaving no dedicated common wire. We install common-wire adapters or run new low-voltage cable through existing wall cavities to properly power your new thermostat without relying on battery-only operation.",
+      "For homeowners ready to upgrade, we install and configure leading smart thermostats—Nest, Ecobee, and Honeywell Home among others—pairing them correctly to your specific system type and setting up geofencing, adaptive scheduling, and remote app access. A correctly configured smart thermostat can reduce heating and cooling costs by 10-15% annually simply by avoiding wasted runtime while you're away or asleep.",
+      "Every thermostat repair or installation in {city} is verified with a full system cycle test: we confirm the thermostat correctly calls for heat and cooling, that staging and fan behavior match your system's actual capabilities, and that any smart scheduling features are functioning before we consider the job complete."
+    ],
+    problems: [
+      {
+        title: "Blank or Unresponsive Display",
+        desc: "Usually dead batteries or a tripped low-voltage fuse on the furnace/air handler control board—but can also indicate a tripped condensate safety float switch cutting power intentionally.",
+        icon: "Thermometer"
+      },
+      {
+        title: "AC or Furnace Won't Respond to Thermostat",
+        desc: "If the thermostat display works but the system never turns on, a loose or miswired control wire is the most common cause, especially after any recent electrical work nearby.",
+        icon: "AlertTriangle"
+      },
+      {
+        title: "Smart Thermostat Won't Stay Powered",
+        desc: "Battery-only operation without a dedicated common wire is the leading cause of smart thermostats randomly rebooting, losing Wi-Fi, or displaying low-power warnings.",
+        icon: "ShieldAlert"
+      },
+      {
+        title: "Temperature Reading Doesn't Match Room Comfort",
+        desc: "A thermostat mounted near a supply vent, exterior door, or in direct sunlight reads a false temperature, causing your system to short-cycle or run longer than necessary.",
+        icon: "Wind"
+      }
+    ],
+    benefits: [
+      {
+        title: "Often Resolves 'Broken AC' Calls Without a Repair",
+        desc: "A significant share of no-cooling and no-heat complaints trace back to the thermostat, not the mechanical system—meaning a much cheaper fix than expected."
+      },
+      {
+        title: "Proper C-Wire Installation",
+        desc: "We run dedicated common-wire power rather than relying on battery-only workarounds, preventing random smart thermostat reboots and connectivity drops."
+      },
+      {
+        title: "10-15% Lower Energy Bills",
+        desc: "Correctly configured smart scheduling and geofencing meaningfully cut runtime waste compared to a static, always-on setpoint."
+      },
+      {
+        title: "Correct System-Type Configuration",
+        desc: "We match thermostat settings precisely to your equipment—conventional, heat pump, or dual-fuel—so staging and auxiliary heat behave exactly as intended."
+      }
+    ],
+    process: [
+      { step: "01", title: "Low-Voltage Diagnostic", desc: "We verify 24V power delivery and test continuity on every control wire connected to your thermostat." },
+      { step: "02", title: "System-Type Configuration Check", desc: "We confirm the thermostat is correctly set up for your specific furnace, AC, or heat pump configuration." },
+      { step: "03", title: "Wiring or Common-Wire Repair", desc: "We repair loose connections or install a common-wire adapter or new low-voltage run as needed." },
+      { step: "04", title: "Thermostat Install or Calibration", desc: "We mount and wire a new smart thermostat, or recalibrate and relocate an existing unit reading incorrectly." },
+      { step: "05", title: "Full System Cycle Test", desc: "We run a complete heating and cooling call to confirm accurate response, staging, and scheduling behavior." }
+    ],
+    emergencyTitle: "Thermostat Blank and System Won't Respond in {city}?",
+    emergencyDesc: "A dead thermostat can leave your whole HVAC system unresponsive even though nothing mechanical is actually broken. Our technicians can usually diagnose and resolve thermostat and low-voltage wiring issues in a single, fast visit.",
+    whyChooseUs: [
+      { title: "Licensed Technicians", desc: "Low-voltage and control wiring diagnostics are performed by trained, licensed HVAC technicians." },
+      { title: "Same-Day Service", desc: "Most thermostat diagnostics and repairs are completed within a single same-day visit." },
+      { title: "Upfront Pricing", desc: "You'll know the flat-rate cost before any wiring, adapter, or thermostat installation begins." },
+      { title: "Warranty Protection", desc: "All thermostat repairs and installations carry our 2-year workmanship warranty." },
+      { title: "Smart Home Expertise", desc: "We install and configure Nest, Ecobee, Honeywell Home, and other leading smart thermostat brands." },
+      { title: "24/7 Availability", desc: "Our dispatch team can schedule thermostat diagnostics any day of the week." }
+    ],
+    brands: ["Nest", "Ecobee", "Honeywell Home", "Carrier", "Trane", "Lennox", "Emerson", "Sensi"],
+    faqs: [
+      { question: "Why is my thermostat completely blank in {city}?", answer: "The most common causes are dead batteries, a tripped low-voltage fuse on your furnace or air handler's control board, or a tripped condensate safety float switch that intentionally cuts 24V power to prevent water overflow damage." },
+      { question: "What is a C-wire and why do smart thermostats need one?", answer: "The common wire (C-wire) provides continuous 24V power directly from your system's control board to the thermostat. Many homes built before smart thermostats were standard only wired the minimum heating/cooling circuits, without a dedicated common wire, causing modern smart thermostats to run on unstable battery power instead." },
+      { question: "Can a bad thermostat make my AC short-cycle?", answer: "Yes. A thermostat that is poorly calibrated, mounted too close to a supply vent or heat source, or has failing internal sensors can call for the system to start and stop far more frequently than necessary, which is hard on the compressor over time." },
+      { question: "Is it worth upgrading to a smart thermostat in {city}?", answer: "For most households, yes. Smart thermostats with geofencing and adaptive scheduling typically reduce heating and cooling costs by 10-15% annually by avoiding wasted runtime while you're away or asleep, and most pay for themselves within one to two seasons." },
+      { question: "Why does my new smart thermostat keep losing Wi-Fi or rebooting?", answer: "This is almost always a power issue—without a properly wired common wire, the thermostat relies on 'power stealing' from the system wiring or battery backup, which is unreliable for Wi-Fi radios. Installing a proper C-wire resolves this permanently." },
+      { question: "Can you move my thermostat to a better location?", answer: "Yes. If your thermostat is mounted near a supply vent, in direct sunlight, or on an exterior wall, we can relocate it and extend the low-voltage wiring to a more representative spot in your home for far more accurate temperature control." },
+      { question: "Do you repair older non-smart, manual thermostats too?", answer: "Absolutely. We diagnose and repair standard mechanical and digital thermostats just as thoroughly as smart models, and can advise honestly on whether a repair or upgrade makes more sense for your situation." },
+      { question: "How long does a typical thermostat repair or install take?", answer: "A standard thermostat diagnostic, wiring repair, or new thermostat installation typically takes about an hour, including full system cycle testing to confirm everything is working correctly before the technician leaves." }
+    ],
+    reviews: [
+      { author: "Rachel P.", text: "Thought our whole AC was dead. Turned out to be a wiring issue at the thermostat that took 30 minutes to fix. Saved me from an unnecessary repair bill.", rating: 5 },
+      { author: "Kevin M.", text: "They installed a proper C-wire for our Ecobee instead of just leaving it on battery power like the last company did. No more random disconnects.", rating: 5 },
+      { author: "Laura B.", text: "Technician noticed our thermostat was mounted right next to a supply vent, relocated it, and our temperature swings disappeared completely. Should have called sooner.", rating: 5 }
+    ],
+    ctaTitle: "Fix Your Thermostat Today!",
+    ctaDesc: "Don't assume your whole system is broken. Call now for fast thermostat diagnostics and smart thermostat installation in {city}."
   }
 };

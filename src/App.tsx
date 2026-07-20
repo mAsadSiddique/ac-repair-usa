@@ -140,7 +140,7 @@ export default function App() {
             if (subPageSlug === "repair") subPageSlug = "ac-repair";
             if (subPageSlug === "service") subPageSlug = "ac-service";
 
-            const validSubPages = ["ac-repair", "ac-service", "ac-installation", "hvac-repair", "hvac-installation", "heating-repair"];
+            const validSubPages = ["ac-repair", "ac-service", "ac-installation", "hvac-repair", "hvac-installation", "heating-repair", "furnace-repair", "emergency-ac-repair", "thermostat-repair"];
             if (validSubPages.includes(subPageSlug)) {
               setActiveSubPage(subPageSlug);
             } else {
@@ -200,7 +200,10 @@ export default function App() {
               "ac-installation",
               "hvac-repair",
               "hvac-installation",
-              "heating-repair"
+              "heating-repair",
+              "furnace-repair",
+              "emergency-ac-repair",
+              "thermostat-repair"
             ].includes(activeSubPage) ? activeSubPage : "ac-repair";
 
             if (templateKey === "ac-repair") {

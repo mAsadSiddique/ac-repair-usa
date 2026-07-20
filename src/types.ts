@@ -20,6 +20,8 @@ export interface CityData {
   commonIssue: string;
   avgSummerTemp: string;
   estimatedCostMultiplier: number;
+  /** 2023 Census Bureau population estimate, when known (real cities dataset). */
+  population?: number;
 }
 
 export interface StateData {
