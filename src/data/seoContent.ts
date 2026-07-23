@@ -24,8 +24,8 @@ export interface SEOServiceTemplate {
 export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   "ac-repair": {
     serviceName: "AC Repair",
-    heroTitle: "Emergency AC Repair in {city}, {state}",
-    heroDesc: "Struggling with a hot, humid home? getacrepair offers immediate, licensed, and EPA-certified emergency air conditioning repair services in {city}, {state}, 24 hours a day. From quick capacitor swaps to complex compressor troubleshooting, our expert technicians are dispatched in fully stocked service vehicles to restore your cooling comfort on the very first visit.",
+    heroTitle: "Same-Day Emergency AC Repair Near Me in {city}, {state}",
+    heroDesc: "AC not cooling in {city}? getacrepair offers same-day emergency air conditioning repair near you — licensed, EPA-certified techs for capacitor, compressor, and refrigerant issues, 24/7. Call for priority dispatch.",
     aboutParagraphs: [
       "When the mercury rises in {city}, your home's air conditioner is the only barrier against suffocating heat and oppressive humidity. Unfortunately, continuous high-thermal loading forces your cooling system to run long, grueling cycles, pushing critical components like the dual-run capacitor, fan relays, and high-pressure compressor to their thermodynamic limits. When a breakdown occurs, you need more than a generic fix; you require an expert, high-precision intervention by local technicians who understand the environmental and mechanical demands specific to {city}.",
       "Our diagnostic protocol is meticulous and scientific. Upon arrival, an EPA-certified technician hooks up advanced digital manifold gauges to measure liquid and suction line pressures. We check the temperature split (Delta-T) across your indoor evaporator coil and outdoor condenser, confirming that heat is being extracted efficiently. We run a full electrical sweep, measuring the microfarad output of your capacitors to ensure they lie within the safe nominal range. This structured approach ensures we identify the precise root cause rather than merely treating the symptoms.",
@@ -346,8 +346,8 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   },
   "ac-installation": {
     serviceName: "AC Installation",
-    heroTitle: "High-Efficiency AC Installation in {city}, {state}",
-    heroDesc: "Ready to upgrade your home comfort? getacrepair delivers premier, high-efficiency central air conditioning installation and complete system replacement in {city}, {state}. Our EPA-certified installation teams conduct full Manual J load calculations, structural duct designs, and premium system commissioning to guarantee maximum efficiency and up to 40% lower utility bills.",
+    heroTitle: "SEER2 High-Efficiency AC Installation in {city}, {state}",
+    heroDesc: "Upgrade to a new SEER2 central AC or heat pump in {city}, {state}. getacrepair delivers Manual J sizing, licensed installation, and transparent estimates — often completed in one day. Call for a free install consult.",
     aboutParagraphs: [
       "Installing a new central air conditioning system is one of the most significant capital investments you will make in your home. While selecting a premium, high-efficiency brand is important, the single most critical factor determining your new system's lifespan, efficiency, and reliability is the quality of the installation itself. According to the Department of Energy, more than half of all new residential HVAC systems are installed incorrectly, leading to frequent breakdowns, uneven cooling, and high energy bills from day one.",
       "At getacrepair, we do not believe in guesswork or shortcuts. Every installation we undertake in {city} begins with a rigorous Manual J Heat Load Calculation. This engineering standard analyzes your home's total square footage, ceiling heights, insulation values, window types, local climate data, and orientation to specify an AC system with the precise cooling capacity required. Oversizing an air conditioner leads to rapid short-cycling, which wears out the compressor and leaves high humidity levels inside, while undersizing forces the system to run continuously without ever reaching comfort levels.",
@@ -1097,8 +1097,8 @@ export const SEO_TEMPLATES: Record<string, SEOServiceTemplate> = {
   },
   "emergency-ac-repair": {
     serviceName: "Emergency AC Repair",
-    heroTitle: "24/7 Emergency AC Repair in {city}, {state}",
-    heroDesc: "Complete AC failure during a heat wave in {city}, {state} demands an immediate response. getacrepair's emergency dispatch network puts a licensed technician at your door in as little as 2 hours, any hour, any day, with fully-stocked trucks ready to restore cooling on the first visit.",
+    heroTitle: "24/7 Emergency AC Repair Near Me in {city}, {state}",
+    heroDesc: "AC completely dead during a heat wave in {city}, {state}? getacrepair's 24/7 emergency AC repair near you targets ~2-hour dispatch with fully stocked trucks — same-visit capacitor, contactor, and cooling restoration when possible.",
     aboutParagraphs: [
       "Not every AC problem can wait until tomorrow. When outdoor temperatures climb past 90°F and your cooling system dies completely, indoor conditions can become genuinely dangerous within hours—especially for infants, seniors, and anyone with a medical condition sensitive to heat. In {city}, our emergency dispatch network exists specifically for these moments: a dedicated on-call rotation of technicians who prioritize total-failure calls above routine scheduling.",
       "Emergency dispatch works differently from a standard appointment. The moment your call comes in, our dispatcher classifies the severity based on your household's specific risk factors and current indoor temperature, then routes the request to the nearest available on-call technician—not the next open slot on a calendar. In most of the areas we serve in {city}, that means a technician arrives within 2 hours of your call, day or night.",

@@ -6,10 +6,12 @@
 import {
   SITE_DEFAULT_DESCRIPTION,
   SITE_DEFAULT_TITLE,
+  SITE_KEYWORDS,
   SITE_LEGAL_NAME,
   SITE_LOCALE,
   SITE_NAME,
   SITE_OG_IMAGE,
+  SITE_PHONE_E164,
   SITE_URL,
   absoluteUrl,
 } from "../data/site";
@@ -58,10 +60,12 @@ export function updatePageSeo({
   document.title = title;
 
   upsertMeta("name", "description", description);
+  upsertMeta("name", "keywords", SITE_KEYWORDS);
   upsertMeta("name", "robots", noIndex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
   upsertMeta("name", "googlebot", noIndex ? "noindex, nofollow" : "index, follow");
   upsertMeta("name", "author", SITE_NAME);
   upsertMeta("name", "theme-color", "#0284c7");
+  upsertMeta("name", "geo.region", "US");
 
   upsertMeta("property", "og:type", type);
   upsertMeta("property", "og:site_name", SITE_NAME);
@@ -106,7 +110,7 @@ export function buildOrganizationSchema() {
     logo: `${SITE_URL}/favicon.svg`,
     image: SITE_OG_IMAGE,
     description: SITE_DEFAULT_DESCRIPTION,
-    telephone: "+18663301137",
+    telephone: SITE_PHONE_E164,
     priceRange: "$$",
     areaServed: {
       "@type": "Country",
@@ -119,7 +123,7 @@ export function buildOrganizationSchema() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+18663301137",
+        telephone: SITE_PHONE_E164,
         contactType: "customer service",
         areaServed: "US",
         availableLanguage: ["English"],
@@ -127,7 +131,7 @@ export function buildOrganizationSchema() {
       },
       {
         "@type": "ContactPoint",
-        telephone: "+18663301137",
+        telephone: SITE_PHONE_E164,
         contactType: "emergency",
         areaServed: "US",
         availableLanguage: ["English"],
@@ -148,6 +152,18 @@ export function buildOrganizationSchema() {
       opens: "00:00",
       closes: "23:59",
     },
+    knowsAbout: [
+      "AC repair near me",
+      "Same-day emergency AC repair",
+      "SEER2 air conditioner installation",
+      "Heat pump installation and repair",
+      "Furnace repair",
+      "HVAC maintenance tune-up",
+      "AC capacitor replacement",
+      "Refrigerant leak detection",
+      "Smart thermostat installation",
+      "Central air conditioning service",
+    ],
     sameAs: [],
   };
 }

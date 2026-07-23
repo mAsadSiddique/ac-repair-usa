@@ -375,11 +375,11 @@ export default function App() {
                   </p>
 
                   <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-white leading-[1.08]">
-                    Trusted AC repair &amp; installation, nationwide.
+                    Same-day AC repair near you, nationwide.
                   </h1>
 
                   <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
-                    EPA-licensed technicians ready same-day across all 50 states—clear pricing, careful workmanship, lasting comfort.
+                    Emergency AC repair, SEER2 installs, heat pumps &amp; HVAC tune-ups — EPA-licensed techs ready across all 50 states.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1">
@@ -406,9 +406,9 @@ export default function App() {
             {/* 2. Services Section */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10" id="services-grid-section">
               <div className="text-center space-y-3">
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Our Certified Air Conditioning Services</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">AC Repair, Installation &amp; HVAC Services Near You</h2>
                 <p className="text-slate-600 max-w-xl mx-auto text-sm">
-                  We handle any central AC or thermostat request. Dispatched mechanics carry advanced EPA credentials to execute repairs cleanly.
+                  Same-day emergency AC repair, SEER2 system installs, heat pumps, furnace fixes, and tune-ups — dispatched by licensed EPA-certified technicians.
                 </p>
               </div>
 

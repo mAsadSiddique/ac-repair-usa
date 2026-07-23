@@ -18,8 +18,8 @@ const root = path.resolve(__dirname, "..");
 const distDir = path.join(root, "dist");
 
 const SITE = "https://getacrepairusa.com";
-const PHONE_DISPLAY = "+1 (866) 330-1137";
-const PHONE_TEL = "tel:+18663301137";
+const PHONE_DISPLAY = "+1 (833) 472-2127";
+const PHONE_TEL = "tel:+18334722127";
 // Full slug list for landing + extra services, used when rendering a major city's cross-links.
 const SERVICE_SLUGS = ["ac-repair", ...EXTRA_SERVICE_SLUGS];
 

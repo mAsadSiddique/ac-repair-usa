@@ -9,12 +9,28 @@ import { PHONE_E164, PHONE_DISPLAY, PHONE_DIGITS } from "./phone";
 export const SITE_URL = "https://getacrepairusa.com";
 export const SITE_NAME = "getacrepair";
 export const SITE_LEGAL_NAME = "getacrepair USA Inc.";
-export const SITE_TAGLINE = "Nationwide Emergency AC Repair & Installation";
+export const SITE_TAGLINE = "Same-Day AC Repair Near Me | Emergency HVAC Nationwide";
 export const SITE_DEFAULT_TITLE = `${SITE_NAME} | ${SITE_TAGLINE}`;
 export const SITE_DEFAULT_DESCRIPTION =
-  "Call getacrepair for licensed, EPA-certified AC repair, installation, and emergency HVAC service across all 50 states. Same-day dispatch. Transparent estimates. Call " +
+  "Need same-day AC repair near you? getacrepair dispatches licensed EPA-certified techs for emergency AC repair, SEER2 installation, heat pumps, and HVAC tune-ups in all 50 states. Call " +
   PHONE_DISPLAY +
   ".";
+
+/** High-intent / trending HVAC search themes for 2026 (meta + schema knowsAbout). */
+export const SITE_KEYWORDS = [
+  "AC repair near me",
+  "same day AC repair",
+  "emergency AC repair",
+  "AC not cooling",
+  "air conditioner repair",
+  "HVAC repair near me",
+  "SEER2 AC installation",
+  "heat pump installation",
+  "furnace repair near me",
+  "AC capacitor replacement",
+  "central air repair",
+  "24 hour AC service",
+].join(", ");
 
 export const SITE_TWITTER_HANDLE = "@getacrepair";
 export const SITE_OG_IMAGE_PATH = "/og-cover.jpg";
